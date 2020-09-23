@@ -20,19 +20,28 @@ int main(int argc, const char * argv[]) {
     cout << "Copper:" << endl;
     cin >> copperInput;
     
+    //Where the magic happens
     
-    lumpedCopper = copperInput%10; //find the remaining value of copper
+    lumpedCopper = copperInput%10;
     
-    lumpedSilver =  ((copperInput - (copperInput%10))/10) + (silverInput - silverInput%10); //for every 10 copper, add 1 silver
+    int copperToSilver;
+    copperToSilver = ((copperInput - (copperInput%10))/10);
+
+    lumpedSilver =  copperToSilver + (silverInput - (silverInput%10));
     
-    lumpedGold = ((lumpedSilver/10) + goldInput);
+    int silverToGold;
+    silverToGold = lumpedSilver/10;
+    
+    int totalSilver;
+    totalSilver = silverInput%10;
+
+    lumpedGold = goldInput + silverToGold;
+    
     
     cout << "\nLumped coins:" << endl;
     cout << lumpedGold << "gp" << endl;
-    cout << lumpedSilver << "sp" << endl;
+    cout << totalSilver << "sp" << endl;
     cout << lumpedCopper << "cp" << endl;
-    
-//    lumpedSilver ((copperInput - (copperInput%10))/10) + (silverInput - silverInput%10);
     
     return 0;
 }
