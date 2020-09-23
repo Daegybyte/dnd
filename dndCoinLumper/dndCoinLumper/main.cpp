@@ -12,7 +12,7 @@ int main(int argc, const char * argv[]) {
 
     int copperInput=0, silverInput=0, goldInput=0, lumpedCopper=0, lumpedSilver=0, lumpedGold=0;
     
-    cout << "Please enter your coin values:" << endl;
+    cout << "Please enter the number of each coin:" << endl;
     cout << "Gold:" << endl;
     cin >> goldInput;
     cout << "Silver:" << endl;
@@ -33,12 +33,13 @@ int main(int argc, const char * argv[]) {
     silverToGold = lumpedSilver/10;
     
     int totalSilver;
-    totalSilver = (silverInput%10 + copperToSilver)%10;
+    totalSilver = (silverInput%10 + copperToSilver%10);
+
 
     lumpedGold = goldInput + silverToGold;
     
     
-    cout << "\nLumped coins:" << endl;
+    cout << "\nCombined coins:" << endl;
     cout << lumpedGold << "gp" << endl;
     cout << totalSilver << "sp" << endl;
     cout << lumpedCopper << "cp" << endl;
