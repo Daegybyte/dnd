@@ -33,7 +33,7 @@ int main(int argc, const char * argv[]) {
     silverToGold = lumpedSilver/10;
     
     int totalSilver;
-    totalSilver = silverInput%10;
+    totalSilver = (silverInput%10 + copperToSilver)%10;
 
     lumpedGold = goldInput + silverToGold;
     
