@@ -10,7 +10,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
 
-    int copperInput=0, silverInput=0, goldInput=0, lumpedCopper=0, lumpedSilver=0, lumpedGold=0;
+    int copperInput=0, silverInput=0, goldInput=0, copperRemaining=0, grossSilver=0, netGold=0;
     
     cout << "Please enter the number of each coin:" << endl;
     cout << "Gold:" << endl;
@@ -22,27 +22,26 @@ int main(int argc, const char * argv[]) {
     
     //Where the magic happens
     
-    lumpedCopper = copperInput%10;
+    copperRemaining = copperInput%10;
     
     int copperToSilver;
-    copperToSilver = copperInput /10;
+    copperToSilver = copperInput /10; //using truncation of ints to get copperToSilver
 
-    lumpedSilver =  copperToSilver + (silverInput - (silverInput%10));
+    grossSilver =  copperToSilver + (silverInput);
+    
+    int netSilver;
+    netSilver = grossSilver%10;
     
     int silverToGold;
-    silverToGold = lumpedSilver/10;
-    
-    int totalSilver;
-    totalSilver = (silverInput%10 + copperToSilver%10)%10; 
+    silverToGold = grossSilver/10;
 
-
-    lumpedGold = goldInput + silverToGold;
+    netGold = goldInput + silverToGold;
     
     
     cout << "\nCombined coins:" << endl;
-    cout << lumpedGold << "gp" << endl;
-    cout << totalSilver << "sp" << endl;
-    cout << lumpedCopper << "cp" << endl;
+    cout << netGold << "gp" << endl;
+    cout << netSilver << "sp" << endl;
+    cout << copperRemaining << "cp" << endl;
     
     return 0;
 }
