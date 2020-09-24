@@ -25,7 +25,7 @@ int main(int argc, const char * argv[]) {
     lumpedCopper = copperInput%10;
     
     int copperToSilver;
-    copperToSilver = ((copperInput - (copperInput%10))/10);
+    copperToSilver = copperInput /10;
 
     lumpedSilver =  copperToSilver + (silverInput - (silverInput%10));
     
@@ -33,7 +33,7 @@ int main(int argc, const char * argv[]) {
     silverToGold = lumpedSilver/10;
     
     int totalSilver;
-    totalSilver = (silverInput%10 + copperToSilver%10);
+    totalSilver = (silverInput%10 + copperToSilver%10)%10; 
 
 
     lumpedGold = goldInput + silverToGold;
