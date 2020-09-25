@@ -48,7 +48,7 @@ int main(int argc, const char * argv[]) {
     cout << "Gold per person: " << gold << endl;
     cout << "Silver per person: " << silver << endl;
     cout << "Copper per person: " << copper << endl;
-    cout << "\nLeftover copper: " << copperRemainder << endl;
+    cout << "|nLeftover copper: " << copperRemainder << endl;
 
     return 0;
 }
