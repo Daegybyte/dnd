@@ -89,16 +89,16 @@ int main(int argc, const char * argv[]) {
     cout << netCopper << "cp" << endl;
     cout << "Copper left to go back to party Inventory: " << copperRemaining << "cp\n" << endl;
     
+//    While loop check
     cout << "Would you like to continue? y/n" <<  endl;
     char programmeContinue;
         cin >> programmeContinue;
         if (programmeContinue == 'y') {
             y = true;
-        }else {
+        }else if (programmeContinue == 'n')
+            cout << "Thank you, come again!" << endl;
             return 1;
         }
-}
-    
     
     return 0;
 }
