@@ -65,9 +65,9 @@
 			children = (
 				8DF534A4251C509D00E929B4 /* main.cpp */,
 				8DF534B1251C535900E929B4 /* lumper.cpp */,
+				8DF534B2251C535900E929B4 /* lumper.hpp */,
 				8DF534B5251C536C00E929B4 /* divider.cpp */,
 				8DF534B6251C536C00E929B4 /* divider.hpp */,
-				8DF534B2251C535900E929B4 /* lumper.hpp */,
 			);
 			path = dndLootLumperAndDivider;
 			sourceTree = "<group>";

@@ -6,3 +6,4 @@
 //
 
 #include "divider.hpp"
+using namespace std;
