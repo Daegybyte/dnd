@@ -90,15 +90,17 @@ int main(int argc, const char * argv[]) {
     cout << "Copper left to go back to party Inventory: " << copperRemaining << "cp\n" << endl;
     
 //    While loop check
-    cout << "Would you like to continue? y/n" <<  endl;
+    cout << "Would you like to input more coins? y/n" <<  endl;
     char programmeContinue;
         cin >> programmeContinue;
         if (programmeContinue == 'y') {
             y = true;
-        }else if (programmeContinue == 'n')
+        }
+        else if (programmeContinue == 'n') {
             cout << "Thank you, come again!" << endl;
+            y = false;
             return 1;
         }
-    
+    }
     return 0;
 }
