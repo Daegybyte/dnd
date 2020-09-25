@@ -11,8 +11,10 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-
     
+    bool y = true;
+    while (y) {
+        
 //    This is the party loot divider programme
     cout << "How many people are in your party" << endl;
     int partySize;
@@ -51,11 +53,12 @@ int main(int argc, const char * argv[]) {
     int copperRemaining = grossDividedCopper - (partySize*copper);
 
 //outputs
-    cout << "\nFor your convenience, your platinum has been converted into gold. \n" << endl;
-    cout << "Gold per person: " << gold << endl;
-    cout << "Silver per person: " << silver << endl;
-    cout << "Copper per person: " << copper << endl;
-    cout << "\nLeftover copper: " << copperRemaining << endl;
+    cout << "\nFor your convenience, platinum has been converted into gold.\n" << endl;
+    cout << "Coins per player: "  << endl;
+    cout << gold << "gp" << endl;
+    cout << silver << "sp" << endl;
+    cout << copper << "cp" << endl;
+    cout << "Copper left to go back to party Inventory: " << copperRemaining << "cp" << endl;
 
 
     //This is the loot lumper
@@ -80,11 +83,21 @@ int main(int argc, const char * argv[]) {
     netGold = gold + silverToGold;
 
 
-    cout << "\nCombined coins:" << endl;
+    cout << "\nCombined coins per player:" << endl;
     cout << netGold << "gp" << endl;
     cout << netSilver << "sp" << endl;
     cout << netCopper << "cp" << endl;
-    cout << "\nLeftover copper: " << copperRemaining << endl;
+    cout << "Copper left to go back to party Inventory: " << copperRemaining << "cp\n" << endl;
+    
+    cout << "Would you like to continue? y/n" <<  endl;
+    char programmeContinue;
+        cin >> programmeContinue;
+        if (programmeContinue == 'y') {
+            y = true;
+        }else {
+            return 1;
+        }
+}
     
     
     return 0;
