@@ -90,7 +90,7 @@ int main(int argc, const char * argv[]) {
     cout << "Amount remaining in party inventory: " << copperRemaining << "cp\n" << endl;
     
 //While loop check
-    cout << "Would you like to continue combing coins? y/n: ";
+    cout << "Would you like to continue combining coins? y/n: ";
     char programmeContinue;
         cin >> programmeContinue;
         if (programmeContinue == 'y') {
