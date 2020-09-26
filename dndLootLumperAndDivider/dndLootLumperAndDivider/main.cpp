@@ -6,8 +6,7 @@
 //
 
 #include <iostream>
-#include "lumper.cpp"
-#include "divider.cpp"
+
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -17,7 +16,7 @@ int main(int argc, const char * argv[]) {
     while (y) {
         
 //This is the party loot divider programme
-    cout << "How many people are in your party? ";
+    cout << "\nHow many people are in your party? ";
     int partySize;
     cin >> partySize;
 //coin inputs
@@ -59,7 +58,7 @@ int main(int argc, const char * argv[]) {
     cout << gold << "gp" << endl;
     cout << silver << "sp" << endl;
     cout << copper << "cp" << endl;
-    cout << "Amount remaining in party inventory: " << copperRemaining << "cp" << endl;
+    cout << "Amount remaining in party inventory: " << copperRemaining << "cp\n" << endl;
 
 
 //This is the loot lumper
@@ -83,7 +82,7 @@ int main(int argc, const char * argv[]) {
     int netGold;
     netGold = gold + silverToGold;
         
-    cout << "\nOr\n" << endl;
+    cout << "Or\n" << endl;
     cout << "Combined coins per player:" << endl;
     cout << netGold << "gp" << endl;
     cout << netSilver << "sp" << endl;
@@ -91,14 +90,14 @@ int main(int argc, const char * argv[]) {
     cout << "Amount remaining in party inventory: " << copperRemaining << "cp\n" << endl;
     
 //While loop check
-    cout << "Would you like to input more coins? y/n" <<  endl;
+    cout << "Would you like to continue combing coins? y/n: ";
     char programmeContinue;
         cin >> programmeContinue;
         if (programmeContinue == 'y') {
             y = true;
         }
         else if (programmeContinue == 'n') {
-            cout << "Thank you, come again!" << endl;
+            cout << "\nThank you, come again!\n" << endl;
             y = false;
             return 1;
         }

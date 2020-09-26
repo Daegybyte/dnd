@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8DF534A5251C509D00E929B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DF534A4251C509D00E929B4 /* main.cpp */; };
-		8DF534B3251C535900E929B4 /* lumper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DF534B1251C535900E929B4 /* lumper.cpp */; };
-		8DF534B7251C536C00E929B4 /* divider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DF534B5251C536C00E929B4 /* divider.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +25,6 @@
 /* Begin PBXFileReference section */
 		8DF534A1251C509D00E929B4 /* dndLootLumperAndDivider */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dndLootLumperAndDivider; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF534A4251C509D00E929B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		8DF534B1251C535900E929B4 /* lumper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lumper.cpp; sourceTree = "<group>"; };
-		8DF534B2251C535900E929B4 /* lumper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = lumper.hpp; sourceTree = "<group>"; };
-		8DF534B5251C536C00E929B4 /* divider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = divider.cpp; sourceTree = "<group>"; };
-		8DF534B6251C536C00E929B4 /* divider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = divider.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				8DF534A4251C509D00E929B4 /* main.cpp */,
-				8DF534B1251C535900E929B4 /* lumper.cpp */,
-				8DF534B2251C535900E929B4 /* lumper.hpp */,
-				8DF534B5251C536C00E929B4 /* divider.cpp */,
-				8DF534B6251C536C00E929B4 /* divider.hpp */,
 			);
 			path = dndLootLumperAndDivider;
 			sourceTree = "<group>";
@@ -128,8 +118,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DF534B3251C535900E929B4 /* lumper.cpp in Sources */,
-				8DF534B7251C536C00E929B4 /* divider.cpp in Sources */,
 				8DF534A5251C509D00E929B4 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
