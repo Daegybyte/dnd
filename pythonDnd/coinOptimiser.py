@@ -24,7 +24,12 @@ copper = grossDividedCopper/partySize
 copperRemaining = grossDividedCopper-(partySize*copper)
 
 print ("\nFor your convenience, platinum has been converted into gold.\n")
-print(int(gold))
-print(int(silver))
-print(int(copper))
-print(int(copperRemaining))
+print(str(int(gold))+str("gp"))
+print(str(int(silver))+str("sp"))
+print(str(int(copper))+str("cp"))
+print(str(int(copperRemaining))+str("cp remaining"))
+
+print (platinum)
+print (gold)
+print (silver)
+print (copper)

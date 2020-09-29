@@ -45,10 +45,10 @@ int main(int argc, const char * argv[]) {
 //gross silver
     int grossDividedSilver = (partySilver + (goldRemaining*10));
     int silver = grossDividedSilver/partySize;
-    int silverRemainder = grossDividedSilver - (partySize*silver);
+    int silverRemaining = grossDividedSilver - (partySize*silver);
 
 //gross copper
-    int grossDividedCopper = (partyCopper + (silverRemainder*10));
+    int grossDividedCopper = (partyCopper + (silverRemaining*10));
     int copper = grossDividedCopper/partySize;
     int copperRemaining = grossDividedCopper - (partySize*copper);
 
