@@ -10,17 +10,17 @@ platinum = partyPlatinum
 
 # Gross gold
 grossDividedGold = (partyGold + (platinum*10))
-gold = grossDividedGold/partySize
+gold = (int)(grossDividedGold/partySize)
 goldRemaining = grossDividedGold-(partySize*gold)
 
 # Gross Silver
 grossDividedSilver = (partySilver + (goldRemaining*10))
-silver = grossDividedSilver/partySize
+silver = (int) (grossDividedSilver/partySize)
 silverRemaining = grossDividedSilver-(partySize*silver)
 
 # Gross copper
 grossDividedCopper = (partyCopper + (silverRemaining*10))
-copper = grossDividedCopper/partySize
+copper = (int)(grossDividedCopper/partySize)
 copperRemaining = grossDividedCopper-(partySize*copper)
 
 print ("\nFor your convenience, platinum has been converted into gold.\n")
@@ -29,7 +29,3 @@ print(str(int(silver))+str("sp"))
 print(str(int(copper))+str("cp"))
 print(str(int(copperRemaining))+str("cp remaining"))
 
-print (platinum)
-print (gold)
-print (silver)
-print (copper)
