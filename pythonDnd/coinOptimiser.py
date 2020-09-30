@@ -7,6 +7,7 @@ while (y):
     partySize = int(input ("\nHow many players are in your party: "))
 
     #These are the initial player inputs for the party loot to be divided and then optimised
+    print("\nHow much loot is being divided?")
     partyPlatinum = int(input("\nPlatinum: "))
     partyGold = int(input("Gold: "))
     partySilver = int(input("Silver: "))
@@ -30,10 +31,11 @@ while (y):
     copperRemaining = grossDividedCopper-(partySize*copper)
 
     print ("\nFor your convenience, platinum has been converted into gold.\n")
+    print("Coins per player")
     print(str(int(gold))+str("gp"))
     print(str(int(silver))+str("sp"))
     print(str(int(copper))+str("cp"))
-    print(str(int(copperRemaining))+str("cp remaining"))
+    print(str(int(copperRemaining))+str("cp remaining in party inventory"))
 
     print("\nOr\n")
 
@@ -47,15 +49,15 @@ while (y):
     silverToGold = grossSilver/10
     netGold = gold+silverToGold
 
-
+    print("Optimised coins per player")
     print(str(int(netGold))+str("gp"))
     print(str(int(netSilver))+str("sp"))
     print(str(int(netCopper))+str("cp"))
-    print(str(int(copperRemaining))+str("cp remaining"))
+    print(str(int(copperRemaining))+str("cp remaining in party inventory"))
 
-    programmeContinue = input(str("Would you like to continue combining coins? y/n: "))
+    programmeContinue = input(str("\nWould you like to continue combining coins? y/n: "))
     if programmeContinue == "y":
         y = True
     elif programmeContinue == "n":
-        print ("\nThank youm come again!\n")
+        print ("\nThank you come again!\n")
         y = False
