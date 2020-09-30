@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 partySize = int(input ("\nHow many players are in your party: "))
 
 #These are the initial player inputs for the party loot to be divided and then optimised
@@ -28,4 +30,24 @@ print(str(int(gold))+str("gp"))
 print(str(int(silver))+str("sp"))
 print(str(int(copper))+str("cp"))
 print(str(int(copperRemaining))+str("cp remaining"))
+
+print("\nOr\n")
+
+netCopper = copper%10
+copperToSilver = copper /10 #using truncation of ints to get copperToSilver
+
+grossSilver = copperToSilver + silver 
+netSilver = grossSilver%10
+silverToGold = grossSilver/10
+
+silverToGold = grossSilver/10
+netGold = gold+silverToGold
+
+
+print(str(int(netGold))+str("gp"))
+print(str(int(netSilver))+str("sp"))
+print(str(int(netCopper))+str("cp"))
+print(str(int(copperRemaining))+str("cp remaining"))
+
+
 
