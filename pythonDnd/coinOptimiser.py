@@ -1,53 +1,61 @@
 #!/usr/bin/env python
+import py_compile
 
-partySize = int(input ("\nHow many players are in your party: "))
+y = True
+while (y):
 
-#These are the initial player inputs for the party loot to be divided and then optimised
-partyPlatinum = int(input("\nPlatinum: "))
-partyGold = int(input("Gold: "))
-partySilver = int(input("Silver: "))
-partyCopper = int(input("Copper: "))
+    partySize = int(input ("\nHow many players are in your party: "))
 
-platinum = partyPlatinum
+    #These are the initial player inputs for the party loot to be divided and then optimised
+    partyPlatinum = int(input("\nPlatinum: "))
+    partyGold = int(input("Gold: "))
+    partySilver = int(input("Silver: "))
+    partyCopper = int(input("Copper: "))
 
-# Gross gold
-grossDividedGold = (partyGold + (platinum*10))
-gold = (int)(grossDividedGold/partySize)
-goldRemaining = grossDividedGold-(partySize*gold)
+    platinum = partyPlatinum
 
-# Gross Silver
-grossDividedSilver = (partySilver + (goldRemaining*10))
-silver = (int) (grossDividedSilver/partySize)
-silverRemaining = grossDividedSilver-(partySize*silver)
+    # Gross gold
+    grossDividedGold = (partyGold + (platinum*10))
+    gold = (int)(grossDividedGold/partySize)
+    goldRemaining = grossDividedGold-(partySize*gold)
 
-# Gross copper
-grossDividedCopper = (partyCopper + (silverRemaining*10))
-copper = (int)(grossDividedCopper/partySize)
-copperRemaining = grossDividedCopper-(partySize*copper)
+    # Gross Silver
+    grossDividedSilver = (partySilver + (goldRemaining*10))
+    silver = (int) (grossDividedSilver/partySize)
+    silverRemaining = grossDividedSilver-(partySize*silver)
 
-print ("\nFor your convenience, platinum has been converted into gold.\n")
-print(str(int(gold))+str("gp"))
-print(str(int(silver))+str("sp"))
-print(str(int(copper))+str("cp"))
-print(str(int(copperRemaining))+str("cp remaining"))
+    # Gross copper
+    grossDividedCopper = (partyCopper + (silverRemaining*10))
+    copper = (int)(grossDividedCopper/partySize)
+    copperRemaining = grossDividedCopper-(partySize*copper)
 
-print("\nOr\n")
+    print ("\nFor your convenience, platinum has been converted into gold.\n")
+    print(str(int(gold))+str("gp"))
+    print(str(int(silver))+str("sp"))
+    print(str(int(copper))+str("cp"))
+    print(str(int(copperRemaining))+str("cp remaining"))
 
-netCopper = copper%10
-copperToSilver = copper /10 #using truncation of ints to get copperToSilver
+    print("\nOr\n")
 
-grossSilver = copperToSilver + silver 
-netSilver = grossSilver%10
-silverToGold = grossSilver/10
+    netCopper = copper%10
+    copperToSilver = copper /10 #using truncation of ints to get copperToSilver
 
-silverToGold = grossSilver/10
-netGold = gold+silverToGold
+    grossSilver = copperToSilver + silver 
+    netSilver = grossSilver%10
+    silverToGold = grossSilver/10
 
-
-print(str(int(netGold))+str("gp"))
-print(str(int(netSilver))+str("sp"))
-print(str(int(netCopper))+str("cp"))
-print(str(int(copperRemaining))+str("cp remaining"))
+    silverToGold = grossSilver/10
+    netGold = gold+silverToGold
 
 
+    print(str(int(netGold))+str("gp"))
+    print(str(int(netSilver))+str("sp"))
+    print(str(int(netCopper))+str("cp"))
+    print(str(int(copperRemaining))+str("cp remaining"))
 
+    programmeContinue = input(str("Would you like to continue combining coins? y/n: "))
+    if programmeContinue == "y":
+        y = True
+    elif programmeContinue == "n":
+        print ("\nThank youm come again!\n")
+        y = False
