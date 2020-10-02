@@ -59,10 +59,10 @@ int main(int argc, const char * argv[]) {
     }
     
 
-        int changeInCopper = combinedPaidInCopper - combinedPriceInCopper;
+        int changeDue = combinedPaidInCopper - combinedPriceInCopper;
         
-        int goldToPlayer = changeInCopper/100;
-        int changeFromGold = changeInCopper%100;
+        int goldToPlayer = changeDue/100;
+        int changeFromGold = changeDue%100;
         
         int silverToPlayer = changeFromGold/10%10;
         int changeFromSilver = changeFromGold%10;
