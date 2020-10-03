@@ -24,21 +24,27 @@ while (y):
     combinedPriceInCopper = goldPrice + silverPrice + copperPrice
     combinedPaidInCopper = goldPaid + silverPaid + copperPaid
 
-    changeDue = combinedPaidInCopper - combinedPriceInCopper
 
-    goldToPlayer = changeDue/100
-    changeFromGold = changeDue%100
+    if combinedPaidInCopper >= combinedPriceInCopper:
+    
+        changeDue = combinedPaidInCopper - combinedPriceInCopper
 
-    silverToPlayer = changeFromGold/10%10
-    changeFromSilver = changeFromGold%10
+        goldToPlayer = changeDue/100
+        changeFromGold = changeDue%100
 
-    copperToPlayer = changeFromSilver%10
+        silverToPlayer = changeFromGold/10%10
+        changeFromSilver = changeFromGold%10
+
+        copperToPlayer = changeFromSilver%10
 
 
-    print("\nYour change:")
-    print (str(int(goldToPlayer))+str("gp"))
-    print (str(int(silverToPlayer))+str("sp"))
-    print (str(int(copperToPlayer))+str("cp"))
+        print("\nYour change:")
+        print (str(int(goldToPlayer))+str("gp"))
+        print (str(int(silverToPlayer))+str("sp"))
+        print (str(int(copperToPlayer))+str("cp"))
+
+    else:
+        print("\nInsufficient funds!\n")
 
 
 
@@ -46,7 +52,7 @@ while (y):
     if programmeContinue == "y":
         y = True
     elif programmeContinue == "n":
-        print ("\nThank you come again!\n")
+        print ("\nThank you, come again!\n")
         y = False
 
 
