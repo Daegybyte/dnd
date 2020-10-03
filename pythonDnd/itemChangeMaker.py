@@ -29,7 +29,7 @@ while (y):
     
         changeDue = combinedPaidInCopper - combinedPriceInCopper
 
-        goldToPlayer = changeDue/100
+        goldToPlayer = changeDue/100 #decrementation and distribution of coins to player
         changeFromGold = changeDue%100
 
         silverToPlayer = changeFromGold/10%10
@@ -39,7 +39,7 @@ while (y):
 
 
         print("\nYour change:")
-        print (str(int(goldToPlayer))+str("gp"))
+        print (str(int(goldToPlayer))+str("gp")) #casting int to convert coinToPlayer from float
         print (str(int(silverToPlayer))+str("sp"))
         print (str(int(copperToPlayer))+str("cp"))
 
