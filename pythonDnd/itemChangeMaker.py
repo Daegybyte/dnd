@@ -21,7 +21,7 @@ while (y):
     goldPaid = goldPaid*100
     silverPaid = silverPaid*10
 
-    combinedPriceInCopper = (goldPrice + silverPrice + copperPrice)*-1
+    combinedPriceInCopper = goldPrice + silverPrice + copperPrice
     combinedPaidInCopper = goldPaid + silverPaid + copperPaid
 
 
