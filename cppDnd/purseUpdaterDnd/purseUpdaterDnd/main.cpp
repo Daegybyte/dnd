@@ -15,18 +15,18 @@ int main(int argc, const char * argv[]) {
     cout << "\nHow much loot are you adding to your purse?" << endl;
    
     cout << "Gold: ";
-    int goldPrice;
-    cin >> goldPrice;
-    goldPrice = goldPrice*100;
+    int goldToAddToPurse;
+    cin >> goldToAddToPurse;
+    goldToAddToPurse = goldToAddToPurse*100;
     
     cout << "Silver: ";
-    int silverPrice;
-    cin >> silverPrice;
-    silverPrice = silverPrice *10;
+    int silverToAddToPurse;
+    cin >> silverToAddToPurse;
+    silverToAddToPurse = silverToAddToPurse *10;
     
     cout << "Copper: ";
-    int copperPrice;
-    cin >> copperPrice;
+    int copperToAddToPurse;
+    cin >> copperToAddToPurse;
     
     
     
@@ -34,46 +34,46 @@ int main(int argc, const char * argv[]) {
     cout << "\nHow much loot do you have already in your purse?" << endl;
    
     cout << "Gold: ";
-    int goldPaid;
-    cin >> goldPaid;
-    goldPaid = goldPaid*100;
+    int currentGoldInPurse;
+    cin >> currentGoldInPurse;
+    currentGoldInPurse = currentGoldInPurse*100;
     
     cout << "Silver: ";
-    int silverPaid;
-    cin >> silverPaid;
-    silverPaid= silverPaid *10;
+    int currentSilverInPurse;
+    cin >> currentSilverInPurse;
+    currentSilverInPurse= currentSilverInPurse *10;
     
     cout << "Copper: ";
-    int copperPaid;
-    cin >> copperPaid;
+    int currentCopperInPurse;
+    cin >> currentCopperInPurse;
     
     
 
-    int combinedPriceInCopper = (goldPrice + silverPrice + copperPrice)*-1;
-    int combinedPaidInCopper = goldPaid + silverPaid + copperPaid;
+    int combinedCopperToAdd = (goldToAddToPurse + silverToAddToPurse + copperToAddToPurse)*-1;
+    int currentCombinedCopperInPurse = currentGoldInPurse + currentSilverInPurse + currentCopperInPurse;
     
-    if (combinedPaidInCopper < combinedPriceInCopper) {
+    if (currentCombinedCopperInPurse < combinedCopperToAdd) {
         cout << "\nInsufficient funds!\n" << endl;
         return 1;
     }
     
 
-        int changeDue = combinedPaidInCopper - combinedPriceInCopper;
+        int updatedCopperInPurse = currentCombinedCopperInPurse - combinedCopperToAdd;
         
-        int goldToPlayer = changeDue/100;
-        int changeFromGold = changeDue%100;
+        int goldToPurse = updatedCopperInPurse/100;
+        int changeFromGold = updatedCopperInPurse%100;
         
-        int silverToPlayer = changeFromGold/10%10;
+        int silverToPurse = changeFromGold/10%10;
         int changeFromSilver = changeFromGold%10;
         
-        int copperToPlayer = changeFromSilver%10;
+        int copperToPurse = changeFromSilver%10;
 
         
         
-        cout << "\nYour change:" << endl;
-        cout << goldToPlayer << "gp" << endl;
-        cout << silverToPlayer << "sp" <<endl;
-        cout << copperToPlayer << "cp\n" << endl;
+        cout << "\nYour new purse total:" << endl;
+        cout << goldToPurse << "gp" << endl;
+        cout << silverToPurse << "sp" <<endl;
+        cout << copperToPurse << "cp\n" << endl;
         
         char programmeContinue = y;
         cout << "\nWould you like to add more loot? y/n\n"<<endl;

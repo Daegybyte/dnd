@@ -38,7 +38,7 @@ while (y):
         copperToPlayer = changeFromSilver%10
 
 
-        print("\nYour change:")
+        print("\nYour new purse total:")
         print (str(int(goldToPlayer))+str("gp")) #casting int to convert coinToPlayer from float
         print (str(int(silverToPlayer))+str("sp"))
         print (str(int(copperToPlayer))+str("cp"))
