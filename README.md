@@ -10,6 +10,9 @@
 ### itemChangeGiver
 - Takes gold, silver, and copper as inputs for item price and price paid. Then outputs the change the player is owed in descending value of coin gold, silver, copper.
 
+### purseUpdaterDnd
+- Uses mostly the same code as itemChangeGiver, but multiplies the amount of loot to add to purse by -1 to then add the difference.
+
 ## pythonDnd
 The above listed programmes, dndLootLumperAndDivider and itemChangeGiver adapted to python for easy use and sharing.
 

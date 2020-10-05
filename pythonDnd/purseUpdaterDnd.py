@@ -4,7 +4,7 @@ import py_compile
 y = True
 while (y):
 
-    print("\nHow much is the item?\n")
+    print("\nHow much loot are you adding to your purse?\n")
 
     goldPrice = int(input("Gold: "))
     silverPrice = int(input("Silver: "))
@@ -13,7 +13,7 @@ while (y):
     goldPrice = goldPrice*100 #Convert gold to copper
     silverPrice = silverPrice*10 #Convert silver to copper
 
-    print("\nHow much did you pay?\n")
+    print("\nHow much loot do you have already in your purse?\n")
     goldPaid = int(input("Gold: "))
     silverPaid = int(input("Silver: "))
     copperPaid = int(input("Copper "))
@@ -48,7 +48,7 @@ while (y):
 
 
 
-    programmeContinue = input(str("\nWould you like to purchase an additional item? y/n "))
+    programmeContinue = input(str("\nWould you like to add more loot? y/n "))
     if programmeContinue == "y":
         y = True
     elif programmeContinue == "n":
