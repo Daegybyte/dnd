@@ -3,7 +3,7 @@
 
 ## cppDnd
 ### coinManager
-- user inpute 1,2,3 to decide wich programme from below to run.
+- user input 1,2,3 to decide wich programme from below to run.
 
 ### dndLootLumperAndDivider
 - Is a programme made from combining dndChangeCalc and dndCoinLumper programmes.
