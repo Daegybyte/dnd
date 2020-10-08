@@ -60,6 +60,13 @@ while (y):
             elif programmeContinue == "n":
                 print ("\nThank you, come again!\n")
                 y = False
+    
+        programmeChoice = input(str("\nWould you like to select another option? y/n "))
+        if programmeChoice == "y":
+            y = True
+        else:
+            y = False
+
     if programmeChoice == 2:
         y = True
         while (y):
@@ -107,11 +114,17 @@ while (y):
             else:
                 print("\nInsufficient funds!\n")
 
-        programmeContinue = input(str("\nWould you like to purchase an additional item? y/n "))
-        if programmeContinue == "y":
+            programmeContinue = input(str("\nWould you like to purchase an additional item? y/n "))
+            if programmeContinue == "y":
+                y = True
+            elif programmeContinue == "n":
+                print ("\nThank you, come again!\n")
+                y = False
+
+        programmeChoice = input(str("\nWould you like to select another option? y/n "))
+        if programmeChoice == "y":
             y = True
-        elif programmeContinue == "n":
-            print ("\nThank you, come again!\n")
+        else:
             y = False
     
     if programmeChoice == 3:
@@ -170,17 +183,22 @@ while (y):
             print(str(int(copperRemaining))+str("cp remaining in party inventory"))
             y = False
 
-        programmeContinue = input(str("\nWould you like to continue distributing coins? y/n: "))
-        if programmeContinue == "y":
-            y = True
-        elif programmeContinue == "n":
-            print ("\nThank you come again!\n")
-            y = False
-
-
-    programmeContinue = input(str("\nWould you like to select another option? y/n "))
-    if programmeContinue == "y":
+            programmeContinue = input(str("\nWould you like to continue distributing coins? y/n: "))
+            if programmeContinue == "y":
+                y = True
+            elif programmeContinue == "n":
+                print ("\nThank you come again!\n")
+                y = False
+    programmeChoice = input(str("\nWould you like to select another option? y/n "))
+    if programmeChoice == "y":
         y = True
-    elif programmeContinue == "n":
-        print ("\nThank you, come again!\n")
+    else:
         y = False
+
+
+# programmeChoice = input(str("\nWould you like to select another option? y/n "))
+# if programmeChoice == "y":
+#     y = True
+# elif programmeChoice == "n":
+#     print ("\nThank you, come again!\n")
+#     y = False
