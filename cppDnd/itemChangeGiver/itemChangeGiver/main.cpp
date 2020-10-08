@@ -28,11 +28,15 @@ int main(int argc, const char * argv[]) {
     cout << "Copper: ";
     int copperPrice;
     cin >> copperPrice;
+        
+    cout << "Number bought: ";
+    int numberBought;
+    cin >> numberBought;
     
     
     
     
-    cout << "\nHow much did you pay?" << endl;
+    cout << "\nHow much money do you have?" << endl;
    
     cout << "Gold: ";
     int goldPaid;
@@ -50,7 +54,7 @@ int main(int argc, const char * argv[]) {
     
     
 
-    int combinedPriceInCopper = goldPrice + silverPrice + copperPrice;
+    int combinedPriceInCopper = (goldPrice + silverPrice + copperPrice)*numberBought;
     int combinedPaidInCopper = goldPaid + silverPaid + copperPaid;
     
     if (combinedPaidInCopper < combinedPriceInCopper) {
@@ -71,13 +75,13 @@ int main(int argc, const char * argv[]) {
 
         
         
-        cout << "\nYour change:" << endl;
+        cout << "\nYour new purse total:" << endl;
         cout << goldToPlayer << "gp" << endl;
         cout << silverToPlayer << "sp" <<endl;
         cout << copperToPlayer << "cp\n" << endl;
         
         char programmeContinue = y;
-        cout << "\nWould you like to purchase an additional item? y/n\n"<<endl;
+        cout << "Would you like to purchase an additional item? y/n\n"<<endl;
         cin >> programmeContinue;
         if (programmeContinue == 'y'){
             y = true;
