@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 import py_compile
 
 y = True
@@ -189,8 +190,8 @@ while (y):
             elif programmeContinue == "n":
                 print ("\nThank you come again!\n")
                 y = False
-    programmeChoice = input(str("\nWould you like to select another option? y/n "))
-    if programmeChoice == "y":
-        y = True
-    else:
-        y = False
+        programmeChoice = input(str("\nWould you like to select another option? y/n "))
+        if programmeChoice == "y":
+            y = True
+        else:
+            y = False
