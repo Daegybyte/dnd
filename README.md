@@ -2,6 +2,9 @@
 
 
 ## cppDnd
+### coinManager
+- user inpute 1,2,3 to decide wich programme from below to run.
+
 ### dndLootLumperAndDivider
 - Is a programme made from combining dndChangeCalc and dndCoinLumper programmes.
 - Takes the number of members in a party, evenly distributes loot, and then optimises that disbursal. User can decide which they prefer to add to their purse.
