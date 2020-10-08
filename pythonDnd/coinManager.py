@@ -194,11 +194,3 @@ while (y):
         y = True
     else:
         y = False
-
-
-# programmeChoice = input(str("\nWould you like to select another option? y/n "))
-# if programmeChoice == "y":
-#     y = True
-# elif programmeChoice == "n":
-#     print ("\nThank you, come again!\n")
-#     y = False
