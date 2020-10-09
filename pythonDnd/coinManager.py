@@ -71,17 +71,29 @@ while (y):
     if programmeChoice == 2:
         y = True
         while (y):
+            
+            sumGoldPrice = 0
+            sumSilverPrice = 0
+            sumCopperPrice = 0
+            
+            numberBought = int(input("\nHow many items would you like to buy? "))
+            
+            for x in range (numberBought):
+                print("\nHow much is the item?\n")
 
-            print("\nHow much is the item?\n")
+                goldPrice = int(input("Gold: "))
+                silverPrice = int(input("Silver: "))
+                copperPrice = int(input("Copper "))
 
-            goldPrice = int(input("Gold: "))
-            silverPrice = int(input("Silver: "))
-            copperPrice = int(input("Copper "))
-            numberBought = int(input("Quantity: "))
+                sumGoldPrice += goldPrice
+                sumSilverPrice += silverPrice
+                sumCopperPrice += copperPrice
 
-            goldPrice = goldPrice*100 #Convert gold to copper
-            silverPrice = silverPrice*10 #Convert silver to copper
 
+            goldPrice = sumGoldPrice*100 #Convert gold to copper
+            silverPrice = sumSilverPrice*10 #Convert silver to copper
+            copperPrice = sumCopperPrice
+            
             print("\nHow much did you pay?\n")
             goldPaid = int(input("Gold: "))
             silverPaid = int(input("Silver: "))
@@ -90,7 +102,7 @@ while (y):
             goldPaid = goldPaid*100
             silverPaid = silverPaid*10
 
-            combinedPriceInCopper = (goldPrice + silverPrice + copperPrice)*numberBought
+            combinedPriceInCopper = goldPrice + silverPrice + copperPrice
             combinedPaidInCopper = goldPaid + silverPaid + copperPaid
 
 
