@@ -7,7 +7,7 @@ person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest e
  
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(0,99)) #for play set to 0,19
-rollD20 = int(random.randint(0,17)) #for play set to 0,19
+rollD20 = int(random.randint(12,12)) #for play set to 0,19
 rollD10 = int(random.randint(1,10)) #for play set to 1,10
 rollD8 = int(random.randint(1,8)) #for play set to 1,8
 rollD5 = int(random.randint(1,5)) #for play set 1,5
@@ -68,7 +68,7 @@ elif rollD20 == 11:
 elif rollD20 == 12:
     rollBallbearings = int(random.randint(1,4))
     distanceBallbearings = int(random.randint(1,4))
-    print(str(rollBallbearings)+str(" thousand ballbearings appear in ")+str(rollBallbearings)+str(" squares ")+str(distanceBallbearings)+str(" squares in front of you."))
+    print(str(rollBallbearings)+str(" thousand ballbearings appear in ")+str(rollBallbearings)+str(" squares ")+str(distanceBallbearings)+str(" ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson]))
 elif rollD20 == 13:
     rollD5
     if rollD5 == 1:
