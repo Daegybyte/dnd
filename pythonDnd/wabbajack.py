@@ -4,10 +4,11 @@ polymorph = ["Chicken", "Goat", "Swarm of Bees!", "Kobold", "Rabbit", "Owl", "St
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "invisibility"]
 direction = ["in front of", "behind", "to the left of", "to the right of", "above"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
+
  
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(0,99)) #for play set to 0,19
-rollD20 = int(random.randint(0,17)) #for play set to 0,17 ......More effects should be added
+rollD20 = int(random.randint(2,2)) #for play set to 0,17 ......More effects should be added
 rollD10 = int(random.randint(1,10)) #for play set to 1,10
 rollD8 = int(random.randint(1,8)) #for play set to 1,8
 rollD5 = int(random.randint(1,5)) #for play set 1,5
@@ -19,11 +20,16 @@ rollPerson = int(random.randint(0,len(person)-1))
 rollDistanceNear = int(random.randint(1,5))
 
 if rollD20 == 0:
-    print("Fireball")
+    print("A fireball shoots towards the nearest enemy who takes 2d10 damage")
 elif rollD20 == 1:
-    print("Thunderbolt")
+    print("A lightning bolt shoots towards the nearest enemy who takes 3d6 damage")
 elif rollD20 == 2:
-    print("Cone of Cold")
+    flipCoin
+    rollD10
+    if flipCoin == 1:
+        print(str("A ")+str(rollD10)+str(" square diameter ice storm centred on the nearest enemy and they take 4d6 damage"))
+    else:
+        print(str("A ")+str(rollD10)+str(" square diameter ice storm centred on the farthest enemy and they take 4d6 damage"))
 elif rollD20 == 3:
     flipCoin
     if flipCoin == 0:
