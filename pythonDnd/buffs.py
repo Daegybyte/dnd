@@ -8,5 +8,3 @@ rollD10 = int(random.randint(1,10))
 print(rollBuffs)
 
 print(str("You have been buffed with ")+str(buffs[rollBuffs]))
-
-
