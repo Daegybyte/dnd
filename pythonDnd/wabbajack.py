@@ -1,21 +1,24 @@
+#D&D Wabbajack by Diego Pisciotta, 2021
+
 import random
 
 """
-* The wabbajack ignores all resistances, willingness (polymorph),or saving throws unless otherwise specified.
-This is because random nature of the Wabbajack essentially functions as the saving throw. The fact that it did not roll polymorph means you have in a sense beaten a DC20 against it.
+* The wabbajack ignores all resistances, willingness requirements (polymorph),or saving throws unless otherwise specified.
+This is because random nature of the Wabbajack essentially functions as the saving throw. The fact that it did not roll polymorph means you have in a sense beaten a DCnumberOfWabbajackEffects against it.
 * Evocation wizards who use the Wabbajack can sculpt evocation spells cast from it, but only for two creatures and it takes their reaction.
 * Wabbajack Juice is a potion that magically appears in the player inventory. The effects are chosen after consumption and are most likely a health potion, but can be a potion of hill giant strength or a potion of poison
+resleeved as Bone Hurting Juice. 
 https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajackJuice.py
 """
 
-polymorph = ["chicken", "goat", "swarm of bees!", "kobold", "rabbit", "owl", "stein of ale", "T-Rex"]
+polymorph = ["chicken", "goat", "swarm of bees!", "kobold", "cat", "rabbit", "owl", "stein of ale","Bruce Willis", "dire wolf", "yeti", "raven", "polar bear", "T-Rex"]
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "invisibility"]
 direction = ["in front of", "behind", "to the left of", "to the right of", "above"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
  
-wabbajackSelector = int(random.randint(12,12)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
+wabbajackSelector = int(random.randint(0,17)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
-rollD100 = int(random.randint(1,100)) #for play set to 0,19
+rollD100 = int(random.randint(1,100)) #for play set to 1,100
 rollD20 = int(random.randint(1,20)) #for play set to 1,20
 rollD10 = int(random.randint(1,10)) #for play set to 1,10
 rollD8 = int(random.randint(1,8)) #for play set to 1,8
@@ -40,9 +43,9 @@ elif wabbajackSelector == 2:
     flipCoin
     rollD10
     if flipCoin == 1:
-        print(str("A ")+str(rollD10)+str(" square diameter ice storm centred on the nearest enemy and they take 4d6 damage"))
+        print(str("A ")+str(rollD10)+str(" square diameter ice storm centred on the nearest enemy. All creatures in area take 4d6 damage."))
     else:
-        print(str("A ")+str(rollD10)+str(" square diameter ice storm centred on the farthest enemy and they take 4d6 damage"))
+        print(str("A ")+str(rollD10)+str(" square diameter ice storm centred on the farthest enemy. All creatures in area take 4d6 damage."))
 #Heal
 elif wabbajackSelector == 3:
     flipCoin
@@ -53,8 +56,8 @@ elif wabbajackSelector == 3:
         print("Nearest enemy heals 10HP")
 #Make it rain
 elif wabbajackSelector == 4:
-    wabbajackSelector
-    print(str(int(wabbajackSelector+1))+str("gp falls from the sky"))
+    rollD20
+    print(str(int(rollD20))+str("gp falls from the sky"))
 #Polymorph
 elif wabbajackSelector == 5:
     rollD10
@@ -120,7 +123,7 @@ elif wabbajackSelector == 15:
     if rollD100 == 100:
         print("Blazing wheels of cheese plummet to the ground at four different points you can see within one mile. Each creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes 20d6 fire damage and 20d6 bludgeoning damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.The spell damages objects in the area and ignites flammable objects that aren't being worn or carried.")
     else:
-        print("Cheese rains down from on high pummeling your foes in a 10 foot area within 90 feet with 3d6 bludgeoning damage , or half as much upon a successful Dex save 18+")
+        print("Cheese rains down from on high pummeling your foes in a 10 foot area within 90 feet with 3d6 bludgeoning damage , or half as much upon a successful Dex save 18")
 #Random Damage
 elif wabbajackSelector == 16:
     flipCoin

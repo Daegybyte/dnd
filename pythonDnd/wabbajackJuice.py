@@ -1,3 +1,5 @@
+#D&D Wabbajack Juice by Diego Pisciotta, 2021
+
 import random
 
 potions = ["health potion", "health potion", "health potion", "health potion", "health potion", "health potion", "health potion", "health potion", "health potion", "potion of hill giant strength", "bone hurting juice"]
