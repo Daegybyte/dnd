@@ -7,7 +7,7 @@ person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest e
  
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(0,99)) #for play set to 0,19
-rollD20 = int(random.randint(0,17)) #for play set to 0,19
+rollD20 = int(random.randint(0,17)) #for play set to 0,17 ......More effects should be added
 rollD10 = int(random.randint(1,10)) #for play set to 1,10
 rollD8 = int(random.randint(1,8)) #for play set to 1,8
 rollD5 = int(random.randint(1,5)) #for play set 1,5
@@ -60,9 +60,9 @@ elif rollD20 == 9:
 elif rollD20 == 10:
     rollD10
     if rollD10 == 1:
-        print("You are frightened")
+        print(str("You are frightened of ")+str(person[rollPerson])+str(" for one minute"))
     else:
-        print("Nearest enemy is now frightened of you")
+        print("Nearest enemy is now frightened of you for one minute")
 elif rollD20 == 11:
     print("You take one level of exhaustion")
 elif rollD20 == 12:
@@ -78,7 +78,11 @@ elif rollD20 == 13:
 elif rollD20 == 14:
     rollBuffs
     rollD10
-    print(str("You have been buffed with ")+str(buffs[rollBuffs]))
+    if rollD10 == 1:
+        print(str(person[rollPerson])+str(" has been buffed with ")+str(buffs[rollBuffs]))
+    else:
+        print(str("You have been buffed with with ")+str(buffs[rollBuffs]))
+
 elif rollD20 == 15:
     rollD100
     if rollD100 == 99:
