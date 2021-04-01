@@ -1,5 +1,4 @@
 #D&D Wabbajack by Diego Pisciotta, 2021
-
 import random
 
 """
@@ -86,7 +85,7 @@ elif wabbajackSelector == 8:
     print("All creatures, monsters, etc. Are knocked prone")
 #Wabbajack Juice 
 elif wabbajackSelector == 9:
-    print("Wabbajack Juice has been added to your inventory \nThe Effects of Wabbajack juice can only be revealed after consumption.")
+    print("Wabbajack Juice has been added to your inventory \nThe effects of Wabbajack juice can only be revealed after consumption.")
 #Fear -- possible to become afraid of self. House rules are encouraged to figure this out.
 elif wabbajackSelector == 10:
     rollD10
@@ -123,7 +122,7 @@ elif wabbajackSelector == 15:
     if rollD100 == 100:
         print("Blazing wheels of cheese plummet to the ground at four different points you can see within one mile. Each creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes 20d6 fire damage and 20d6 bludgeoning damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.The spell damages objects in the area and ignites flammable objects that aren't being worn or carried.")
     else:
-        print("Cheese rains down from on high pummeling your foes in a 10 foot area within 90 feet with 3d6 bludgeoning damage , or half as much upon a successful Dex save 18")
+        print("Cheese rains down from on high pummeling your foes in a 10 foot area within 90 feet with 3d6 bludgeoning damage , or half as much upon a successful save Dex 18")
 #Random Damage
 elif wabbajackSelector == 16:
     flipCoin
