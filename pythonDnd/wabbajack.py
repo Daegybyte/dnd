@@ -1,8 +1,5 @@
 import random
 
-#useWabbajack = int(input("Use "))
-#if useWabbajack == 1:
-
 polymorph = ["Chicken", "Goat", "Swarm of Bees!", "Kobold", "Rabbit", "Owl", "Stein of Ale", "T-Rex"]
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "invisibility"]
 direction = ["in front of", "behind", "to the left of", "to the right of", "above"]
@@ -10,7 +7,7 @@ person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest e
  
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(0,99)) #for play set to 0,19
-rollD20 = int(random.randint(19,19)) #for play set to 0,19
+rollD20 = int(random.randint(0,17)) #for play set to 0,19
 rollD10 = int(random.randint(1,10)) #for play set to 1,10
 rollD8 = int(random.randint(1,8)) #for play set to 1,8
 rollD5 = int(random.randint(1,5)) #for play set 1,5
@@ -60,46 +57,42 @@ elif rollD20 == 8:
     print("All creatures, monsters, etc. Are knocked prone")
 elif rollD20 == 9:
     print("Wabbajack Juice has been added to your inventory \nThe Effects of Wabbajack juice can only be revealed after consumption.")
-#elif rollD20 = 10:
-    #TBD
-elif rollD20 == 11:
+elif rollD20 == 10:
     rollD10
     if rollD10 == 1:
         print("You are frightened")
     else:
         print("Nearest enemy is now frightened of you")
-elif rollD20 == 12:
+elif rollD20 == 11:
     print("You take one level of exhaustion")
-elif rollD20 == 13:
+elif rollD20 == 12:
     rollBallbearings = int(random.randint(1,4))
     distanceBallbearings = int(random.randint(1,4))
     print(str(rollBallbearings)+str(" thousand ballbearings appear in ")+str(rollBallbearings)+str(" squares ")+str(distanceBallbearings)+str(" squares in front of you."))
-elif rollD20 == 14:
+elif rollD20 == 13:
     rollD5
     if rollD5 == 1:
         print("You have been sapped of 15hp and it has been given to the nearest enemy")
     else:
         print("You have absorbed 10hp from the nearest enemy")
-#elif rollD20 = 15:
-    #TBD
-elif rollD20 == 16:
+elif rollD20 == 14:
     rollBuffs
     rollD10
     print(str("You have been buffed with ")+str(buffs[rollBuffs]))
-elif rollD20 == 17:
+elif rollD20 == 15:
     rollD100
     if rollD100 == 99:
         print("Blazing wheels of cheese plummet to the ground at four different points you can see within one mile. Each creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes 20d6 fire damage and 20d6 bludgeoning damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.The spell damages objects in the area and ignites flammable objects that aren't being worn or carried.")
     else:
         print("Cheese rains down from on high pummeling your foes in a 10 foot area within 90 feet with 3d6 bludgeoning damage , or half as much upon a successful Dex save 18+")
-elif rollD20 == 18:
+elif rollD20 == 16:
     flipCoin
     rollD10
     if flipCoin == 0:
         print(str("You take ")+str(int(rollD10))+str(" damage"))
     else:
         print(str("The nearest enemy to you takes ")+str(int(rollD10))+str(" damage"))
-elif rollD20 == 19:
+elif rollD20 == 17:
     rollExplosionSize = int(random.randint(1,3))
     rollDistanceNear
     rollDirection
