@@ -7,16 +7,18 @@ This is because random nature of the Wabbajack essentially functions as the savi
 * Evocation wizards who use the Wabbajack can sculpt evocation spells cast from it, but only for two creatures and it takes their reaction.
 * Wabbajack Juice is a potion that magically appears in the player inventory. The effects are chosen after consumption and are most likely a health potion, but can be a potion of hill giant strength or a potion of poison
 resleeved as Bone Hurting Juice. 
-https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajackJuice.py
+https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajack/wabbajackJuice.py
 """
 
+# Lists to pull from
 polymorph = ["chicken", "goat", "swarm of bees!", "kobold", "cat", "rabbit", "owl", "stein of ale","Bruce Willis", "dire wolf", "yeti", "raven", "polar bear", "T-Rex"]
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "invisibility"]
 direction = ["in front of", "behind", "to the left of", "to the right of", "above"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
-party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
 afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
+party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
  
+#Dice Rolls
 wabbajackSelector = int(random.randint(9,9)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(1,100)) #for play set to 1,100
@@ -25,6 +27,7 @@ rollD10 = int(random.randint(1,10)) #for play set to 1,10
 rollD8 = int(random.randint(1,8)) #for play set to 1,8
 rollD5 = int(random.randint(1,5)) #for play set 1,5
 
+# Do NOT touch
 rollPolymorph  = int(random.randint(0,len(polymorph)-1))
 rollBuffs = int(random.randint(0,len(buffs)-1))
 rollDirection = int(random.randint(0,len(direction)-1))
