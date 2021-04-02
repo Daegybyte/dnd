@@ -1,9 +1,13 @@
 # Dungeons & Dragons related programmes
 
+## Wabbajack
+### An item ported to D&D from Elder Scrolls, the wabbajack brings fun and chaos to any campaign
+- wabbajack.py runs the main programme for the item. It rolls and decides the fates of each player. Sometimes for good, sometimes<br />for the funny.
+-wabbajackJuice.py is a secondary programme used for if a player has decided to risk drinking the potion (wabbajack juice) in their inventory.
+- Buffs is a basic programme to randomly select buffs. It started as a practice programme, but stays in the collection because it<br />might somehow be useful later.
 
-## cppDnd
-### coinManager
-- user input 1,2,3 to decide wich programme from below to run.
+## coinManager
+- user input 1,2,3 to decide which programme from below to run.
 
 ### dndLootLumperAndDivider
 - Is a programme made from combining dndChangeCalc and dndCoinLumper programmes.
@@ -16,6 +20,6 @@
 ### purseUpdaterDnd
 - Uses mostly the same code as itemChangeGiver, but multiplies the amount of loot to add to purse by -1 to then add the difference.
 
-## pythonDnd
-The above listed programmes, dndLootLumperAndDivider and itemChangeGiver adapted to python for easy use and sharing.
-
+<br />
+## cppDnd
+### A collection of some of the above programmes written into C++. Added when I see fit.
