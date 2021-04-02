@@ -3,9 +3,9 @@ import random
 import json
 
 """
+* Once per short rest
 * The wabbajack ignores all resistances, willingness requirements (polymorph),or saving throws unless otherwise specified.
 This is because random nature of the Wabbajack essentially functions as the saving throw. The fact that it did not roll polymorph means you have in a sense beaten a DCnumberOfWabbajackEffects against it.
-* Evocation wizards who use the Wabbajack can sculpt evocation spells cast from it, but only for two creatures and it takes their reaction.
 * Wabbajack Juice is a potion that magically appears in the player inventory. The effects are chosen after consumption and are most likely a health potion, but can be a potion of hill giant strength or a potion of poison
 resleeved as Bone Hurting Juice. 
 https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajack/wabbajackJuice.py
@@ -13,7 +13,7 @@ https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajack/wabbajackJuice.
 
 # Lists to pull from
 polymorph = ["chicken", "goat", "swarm of bees!", "kobold", "cat", "rabbit", "owl", "stein of ale","Bruce Willis", "dire wolf", "yeti", "raven", "polar bear", "T-Rex"]
-buffs = ["enlarge", "reduce", "haste", "freedom of movement", "invisibility"]
+buffs = ["enlarge", "reduce", "haste", "freedom of movement", "bardic inspiration"]
 direction = ["in front of", "behind", "to the left of", "to the right of", "above"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
 afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
@@ -40,8 +40,9 @@ rollDistanceMedium = int(random.randint(4,11))
 rollDistanceFar = int(random.randint(9,18))
 
 #fireball
-if wabbajackSelector == 0:
-    print("A fireball shoots towards the nearest enemy who takes 2d10 damage")
+if wabbajackSelector == 0: 
+    #flip coin between caster and strongest character
+    print("A fireball shoots towards the nearest enemy who takes 8d6 damage")
 #lightning bolt
 elif wabbajackSelector == 1:
     print("A lightning bolt shoots towards the nearest enemy who takes 3d6 damage")
@@ -68,7 +69,7 @@ elif wabbajackSelector == 4:
 #Polymorph
 elif wabbajackSelector == 5:
     rollD10
-    if rollD10 == 1:
+    if rollD10 <= 2:
         print(str("You have been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
     else:
         print(str("Nearest enemy has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
@@ -96,13 +97,13 @@ elif wabbajackSelector == 9:
     rollParty
     rollD5
     if rollD5 <= 3:
-        print(str("Wabbajack juice has been added to ")+str(party[rollParty])+str("'s inventory.\nThe effects of Wabbajack juice can only be revealed after consumption."))
+        print(str("Wabbajack juice has been added to ")+str(party[rollParty])+str("'s inventory.\nThe effects of Wabbajack juice can only be revealed after consumption.\nPrevious wabbajack juice disappears from inventory if it has not been consumed by the time the wabbajack is used again."))
     else:
-        print("Wabbajack Juice has been added to your inventory \nThe effects of Wabbajack juice can only be revealed after consumption.")
+        print("Wabbajack Juice has been added to your inventory \nThe effects of Wabbajack juice can only be revealed after consumption.\nPrevious wabbajack juice disappears from inventory if it has not been consumed by the time the wabbajack is used again.")
 #Fear
 elif wabbajackSelector == 10:
     rollD10
-    if rollD10 == 1:
+    if rollD10  <= 3:
         print(str("You are frightened of ")+str(afraidOf[rollAfraidOf])+str(" for one minute"))
     else:
         print("Nearest enemy is now frightened of you for one minute")
@@ -125,7 +126,7 @@ elif wabbajackSelector == 13:
 elif wabbajackSelector == 14:
     rollBuffs
     rollD10
-    if rollD10 == 1:
+    if rollD10 <= 2:
         print(str(person[rollPerson])+str(" has been buffed with ")+str(buffs[rollBuffs]))
     else:
         print(str("You have been buffed with with ")+str(buffs[rollBuffs]))
@@ -133,9 +134,9 @@ elif wabbajackSelector == 14:
 elif wabbajackSelector == 15:
     rollD100
     if rollD100 == 100:
-        print("Blazing wheels of cheese plummet to the ground at four different points you can see within one mile. Each creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes 20d6 fire damage and 20d6 bludgeoning damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.The spell damages objects in the area and ignites flammable objects that aren't being worn or carried.")
+        print("Blazing wheels of cheese plummet to the ground at four different points you can see within one mile. Each creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes 40d6 damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.The spell damages objects in the area and ignites flammable objects that aren't being worn or carried.")
     else:
-        print("Cheese rains down from on high pummeling your foes in a 10 foot area within 90 feet with 3d6 bludgeoning damage , or half as much upon a successful save Dex 18")
+        print("Cheese rains down from on high pummeling your foes in a 10 foot area within 90 feet with 3d6 damage , or half as much upon a successful save Dex 18")
 #Random Damage
 elif wabbajackSelector == 16:
     flipCoin
@@ -153,3 +154,7 @@ elif wabbajackSelector == 17:
     rollD10
     rollD20
     print(str("An explosion erupts ")+str(rollDistanceNear)+str(" squares ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares must beat a dexterity saving throw or take ")+str(rollD20)+str(" damage. Or half as much on successful save."))
+
+#Lucky a member of the party gets the luck feat for one day
+
+#spectral shield
