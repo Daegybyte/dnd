@@ -21,5 +21,6 @@
 - Uses mostly the same code as itemChangeGiver, but multiplies the amount of loot to add to purse by -1 to then add the difference.
 
 <br />
+
 ## cppDnd
-### A collection of some of the above programmes written into C++. Added when I see fit.
+### A collection of some of the above programmes written into C++.
