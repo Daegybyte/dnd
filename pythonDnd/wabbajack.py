@@ -14,9 +14,10 @@ polymorph = ["chicken", "goat", "swarm of bees!", "kobold", "cat", "rabbit", "ow
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "invisibility"]
 direction = ["in front of", "behind", "to the left of", "to the right of", "above"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
+party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
 afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
  
-wabbajackSelector = int(random.randint(0,17)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
+wabbajackSelector = int(random.randint(9,9)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(1,100)) #for play set to 1,100
 rollD20 = int(random.randint(1,20)) #for play set to 1,20
@@ -28,6 +29,7 @@ rollPolymorph  = int(random.randint(0,len(polymorph)-1))
 rollBuffs = int(random.randint(0,len(buffs)-1))
 rollDirection = int(random.randint(0,len(direction)-1))
 rollPerson = int(random.randint(0,len(person)-1))
+rollParty = int(random.randint(0,len(party)-1))
 rollAfraidOf = int(random.randint(0,len(afraidOf)-1))
 rollDistanceNear = int(random.randint(1,5))
 rollDistanceMedium = int(random.randint(4,11))
@@ -87,8 +89,13 @@ elif wabbajackSelector == 8:
     print("All creatures, monsters, etc. Are knocked prone")
 #Wabbajack Juice 
 elif wabbajackSelector == 9:
-    print("Wabbajack Juice has been added to your inventory \nThe effects of Wabbajack juice can only be revealed after consumption.")
-#Fear -- possible to become afraid of self. House rules are encouraged to figure this out.
+    rollParty
+    rollD5
+    if rollD5 <= 3:
+        print(str("Wabbajack juice has been added to ")+str(party[rollParty])+str("'s inventory.\nThe effects of Wabbajack juice can only be revealed after consumption."))
+    else:
+        print("Wabbajack Juice has been added to your inventory \nThe effects of Wabbajack juice can only be revealed after consumption.")
+#Fear
 elif wabbajackSelector == 10:
     rollD10
     if rollD10 == 1:
