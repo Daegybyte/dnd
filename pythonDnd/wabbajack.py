@@ -14,6 +14,7 @@ polymorph = ["chicken", "goat", "swarm of bees!", "kobold", "cat", "rabbit", "ow
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "invisibility"]
 direction = ["in front of", "behind", "to the left of", "to the right of", "above"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
+afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
  
 wabbajackSelector = int(random.randint(0,17)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
@@ -27,6 +28,7 @@ rollPolymorph  = int(random.randint(0,len(polymorph)-1))
 rollBuffs = int(random.randint(0,len(buffs)-1))
 rollDirection = int(random.randint(0,len(direction)-1))
 rollPerson = int(random.randint(0,len(person)-1))
+rollAfraidOf = int(random.randint(0,len(afraidOf)-1))
 rollDistanceNear = int(random.randint(1,5))
 rollDistanceMedium = int(random.randint(4,11))
 rollDistanceFar = int(random.randint(9,18))
@@ -90,7 +92,7 @@ elif wabbajackSelector == 9:
 elif wabbajackSelector == 10:
     rollD10
     if rollD10 == 1:
-        print(str("You are frightened of ")+str(person[rollPerson])+str(" for one minute"))
+        print(str("You are frightened of ")+str(afraidOf[rollAfraidOf])+str(" for one minute"))
     else:
         print("Nearest enemy is now frightened of you for one minute")
 #Exhaustion
