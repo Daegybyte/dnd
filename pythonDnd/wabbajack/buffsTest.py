@@ -1,6 +1,10 @@
 import random
+import json
 
-buffs = ["enlarge","reduce","haste","freedom of movement","invisibility"]
+#buffs = ["enlarge","reduce","haste","freedom of movement","invisibility"]
+
+buffs = json.loads(open("buffs.json").read())
+
 
 rollBuffs = int(random.randint(0,len(buffs)-1))
 rollD10 = int(random.randint(1,10))

@@ -1,5 +1,6 @@
 #D&D Wabbajack by Diego Pisciotta, 2021
 import random
+import json
 
 """
 * The wabbajack ignores all resistances, willingness requirements (polymorph),or saving throws unless otherwise specified.
@@ -19,7 +20,7 @@ afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "
 party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
  
 #Dice Rolls
-wabbajackSelector = int(random.randint(9,9)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
+wabbajackSelector = int(random.randint(14,14)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(1,100)) #for play set to 1,100
 rollD20 = int(random.randint(1,20)) #for play set to 1,20
