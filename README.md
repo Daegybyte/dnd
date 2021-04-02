@@ -2,9 +2,9 @@
 
 ## Wabbajack
 ### An item ported to D&D from Elder Scrolls, the wabbajack brings fun and chaos to any campaign
-- wabbajack.py runs the main programme for the item. It rolls and decides the fates of each player. Sometimes for good, sometimes<br />for the funny.
+- wabbajack.py runs the main programme for the item. It rolls and decides the fates of each player. Sometimes for good, sometimes for the funny.
 -wabbajackJuice.py is a secondary programme used for if a player has decided to risk drinking the potion (wabbajack juice) in their inventory.
-- Buffs is a basic programme to randomly select buffs. It started as a practice programme, but stays in the collection because it<br />might somehow be useful later.
+- buffs.py is a basic programme to randomly select buffs. It started as a practice programme to build out wabbajack/juice, but stays in the collection because it might somehow be useful later.
 
 ## coinManager
 - user input 1,2,3 to decide which programme from below to run.
