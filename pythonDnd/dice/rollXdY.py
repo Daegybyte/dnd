@@ -1,13 +1,13 @@
 import random
 
-def rollDamage(diceToBeRolled, dX):
-    rollDamage = 0
+def rollDice(diceToBeRolled, dX):
+    rollDice = 0
     for x in range(diceToBeRolled):  
         diceValue = int(random.randint(1,dX))
-        rollDamage += diceValue
+        rollDice += diceValue
         x += 1
-    print(rollDamage)
-    return rollDamage
+    print (rollDice)
+    return rollDice
 
 
-print(rollDamage(1,6))
+print (rollDice(1,20))
