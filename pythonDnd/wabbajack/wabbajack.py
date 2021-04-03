@@ -20,12 +20,13 @@ afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "
 party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
  
 #Dice Rolls
-wabbajackSelector = int(random.randint(0,17)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
+wabbajackSelector = int(random.randint(0,18)) #for testing, set both numbers to the effect number you are testing. For play, set to '0,maxEffectNumber' ......More effects should be added
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 rollD100 = int(random.randint(1,100)) #for play set to 1,100
 rollD20 = int(random.randint(1,20)) #for play set to 1,20
 rollD10 = int(random.randint(1,10)) #for play set to 1,10
 rollD8 = int(random.randint(1,8)) #for play set to 1,8
+rollD6 = int(random.randint(1,6)) #for play set to 1,6
 rollD5 = int(random.randint(1,5)) #for play set 1,5
 
 # Do NOT touch
@@ -39,13 +40,25 @@ rollDistanceNear = int(random.randint(1,5))
 rollDistanceMedium = int(random.randint(4,11))
 rollDistanceFar = int(random.randint(9,18))
 
+#function to output damage based on xDy format of rolling damage dice x,y
+def rollDamage(diceToBeRolled, dX):
+    rollDamage = 0
+    for x in range(diceToBeRolled):  
+        diceValue = int(random.randint(1,dX))
+        rollDamage += diceValue
+        x += 1
+    return rollDamage
+
 #fireball
 if wabbajackSelector == 0: 
-    #flip coin between caster and strongest character
-    print("A fireball shoots towards the nearest enemy who takes 8d6 damage")
+    flipCoin
+    if flipCoin == 0:
+        print(str("a fireball shoots towards ")+str(party[rollParty])+ str(" who takes ")+str(rollDamage(8,6))+str(" damage."))
+    else:
+        print(str("A fireball shoots towards the strongest enemy (determined by DM) who takes ")+str(rollDamage(8,6))+str(" damage"))
 #lightning bolt
 elif wabbajackSelector == 1:
-    print("A lightning bolt shoots towards the nearest enemy who takes 3d6 damage")
+    print(str("A lightning bolt shoots towards the nearest enemy who takes ")+str(rollDamage(3,6))+str(" damage"))
 #Ice storm
 elif wabbajackSelector == 2:
     flipCoin
@@ -69,8 +82,8 @@ elif wabbajackSelector == 4:
 #Polymorph
 elif wabbajackSelector == 5:
     rollD10
-    if rollD10 <= 2:
-        print(str("You have been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
+    if rollD10 <= 4:
+        print(str(party[rollParty])+str(" has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
     else:
         print(str("Nearest enemy has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
 #Invisibility
@@ -155,6 +168,11 @@ elif wabbajackSelector == 17:
     rollD20
     print(str("An explosion erupts ")+str(rollDistanceNear)+str(" squares ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares must beat a dexterity saving throw or take ")+str(rollD20)+str(" damage. Or half as much on successful save."))
 
-#Lucky a member of the party gets the luck feat for one day
+#Lucky
+
+elif wabbajackSelector == 18:
+    print(str(party[rollParty])+str(" has become luckyfor one day!\nYou have 3 luck points. Whenever you make an attack roll, ability check, or saving throw, you may spend 1 luck point to roll an additional d20. You can use this ability after the original roll, but before the outcome is revealed. You choose which of the d20s is used for the attack roll, ability check, or saving throw.\nYou can also spend one luck point when an attack roll is made against you. Roll a d20, and choose whether the attacker's roll uses their d20 roll or yours.\nIf multiple creatures use a luck point on the same roll, they cancel out, resulting in no additional dice.\n"))
 
 #spectral shield
+elif wabbajackSelector == 19:
+     print(str("A spectral shield appears near ")+str(party[rollParty])+str(". Their AC is increased by +2\nand they are immune to magic missile for one minute."))
