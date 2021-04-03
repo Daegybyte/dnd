@@ -31,7 +31,7 @@ squares = ["one", "two", "three", "four", "five"]
 
 #for testing, set both numbers to the effect number you are testing.
 # For play, set to '1,maxEffectNumber' ......More effects should be added
-wabbajackSelector = int(random.randint(18,18)) 
+wabbajackSelector = int(random.randint(1,20)) 
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 
 #function to output dice rolls based on xDy format of rolling damage dice x,y
