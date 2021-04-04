@@ -29,11 +29,15 @@ The script for  Wabbajack Juice can be found at: https://github.com/Daegybyte/dn
  function rollDice(diceToBeRolled,dX){
     let diceOutcome = 0;
     let diceSum = 0;
-    for (let x = 0; x < diceToBeRolled; x++)
-      diceOutcome = 1+ Math.floor((Math.random() * dX+1));
+    for (let x = 0; x < diceToBeRolled; x++){
+      diceOutcome = Math.floor(Math.random() * dX)+1;
       diceSum += diceOutcome;
+    }
     return diceSum;
   }
 
-  rollDice(3,1);
+  var wabbajackSelector = Math.floor(Math.random() * 20) + 1;
+
+
+
 
