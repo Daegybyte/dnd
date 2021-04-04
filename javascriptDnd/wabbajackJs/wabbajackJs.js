@@ -36,7 +36,11 @@ function rollDice(diceToBeRolled,dX){
    return diceSum;
  }
 
-var wabbajackSelector = Math.floor(Math.random() * 1) + 1;
+function wabbajackSelector(){
+  var wabbajackSelector = Math.floor(Math.random() * 1) + 1;
+  return wabbajackSelector;
+}
+
 var flipCoin = Math.floor(Math.random() * 2);
 
 var rollBallBearings //spawns 1,2,3,4 thousand ballbearings
