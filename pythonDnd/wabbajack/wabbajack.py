@@ -31,7 +31,7 @@ squares = ["one", "two", "three", "four", "five"]
 
 #for testing, set both numbers to the effect number you are testing.
 # For play, set to '1,maxEffectNumber' ......More effects should be added
-wabbajackSelector = int(random.randint(1,20)) 
+wabbajackSelector = int(random.randint(7,7)) 
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 
 #function to output dice rolls based on xDy format of rolling damage dice x,y
@@ -56,6 +56,7 @@ rollSquares = int(random.randint(0,len(squares)-1))
 rollPerson = int(random.randint(0,len(person)-1))
 rollParty = int(random.randint(0,len(party)-1))
 rollAfraidOf = int(random.randint(0,len(afraidOf)-1))
+
 
 
 #Wabbajack effects:
@@ -105,7 +106,7 @@ elif wabbajackSelector == 6:
 #Summon Kobold
 elif wabbajackSelector == 7:
     if rollDice(1,10) == 1:
-        print(str("\n")+str("An enemy kobold appears"))
+        print(str("\n")+str("An enemy kobold appears.!"))
     elif rollDice(1,10) == 2:
         print(str("\n")+str("A friendly kobold appears and aids you in combat for one day"))
     else:
@@ -117,18 +118,14 @@ elif wabbajackSelector == 8:
 
 #Wabbajack Juice 
 elif wabbajackSelector == 9:
-    flipCoin
-    if flipCoin == 0:
-        print(str("\nWabbajack juice has been added to ")+str(party[rollParty])+str("'s inventory.\nThe effects of Wabbajack juice can only be revealed after consumption.\nPrevious wabbajack juice disappears from inventory if it has not been consumed by the time the wabbajack is used again."))
-    else:
-        print("\nWabbajack Juice has been added to your inventory \nThe effects of Wabbajack juice can only be revealed after consumption.\nPrevious wabbajack juice disappears from inventory if it has not been consumed by the time the wabbajack is used again.")
+    print(str("\nWabbajack juice appears in ")+str(party[rollParty])+str("'s hand.\nThey can either take one action to put it away\nor consume without using an action.\n\nThe effects of Wabbajack juice can only be revealed after consumption.\nPrevious wabbajack juice disappear from existence if it has not been consumed\nby the time the wabbajack is used again."))
 
 #Fear
 elif wabbajackSelector == 10:
     if rollDice(1,10)  <= 3:
         print(str("\n")+str("You are frightened of ")+str(afraidOf[rollAfraidOf])+str(" for one minute"))
     else:
-        print(str("\n")+str("Nearest enemy is now frightened of you for one minute"))
+        print(str("\n")+str("The nearest enemy to ")+str(party[rollParty])+str(" is now frightened of them for one minute"))
 
 #Exhaustion
 elif wabbajackSelector == 11:
@@ -138,7 +135,7 @@ elif wabbajackSelector == 11:
 elif wabbajackSelector == 12:
     rollBallbearings
     rollSquares
-    print(str("\n")+str(rollBallbearings)+str(" thousand ballbearings appear in ")+str(rollBallbearings)+str(" squares, ")+str(squares[rollSquares])+str(" ")+str(direction[rollDirection])+str(" of ")+str(person[rollPerson]))
+    print(str("\n")+str(rollBallbearings)+str(" thousand ballbearings appear in ")+str(rollBallbearings)+str(" squares,\n")+str(squares[rollSquares])+str(" ")+str(direction[rollDirection])+str(" of ")+str(person[rollPerson]))
 
 #Absorb HP
 elif wabbajackSelector == 13:
@@ -151,9 +148,9 @@ elif wabbajackSelector == 13:
 elif wabbajackSelector == 14:
     rollBuffs
     if rollDice(1,10) <= 3:
-        print(str("\n")+str(person[rollPerson])+str(" has been buffed with ")+str(buffs[rollBuffs]))
+        print(str("\n")+str(person[rollPerson])+str(" has been buffed with ")+str(buffs[rollBuffs])+str(" for one minute"))
     else:
-        print(str("\n")+str("You have been buffed with with ")+str(buffs[rollBuffs]))
+        print(str("\n")+str("Selsys been buffed with with ")+str(buffs[rollBuffs])+str(" for one minute"))
 
 #Cheese storm
 elif wabbajackSelector == 15:
@@ -166,9 +163,9 @@ elif wabbajackSelector == 15:
 elif wabbajackSelector == 16:
     flipCoin
     if flipCoin == 0:
-        print(str("\nYou take ")+str(int(rollDice(2,6)))+str(" damage"))
+        print(str("\n")+str(party[rollParty])+str(" takes ")+str(int(rollDice(2,6)))+str(" damage"))
     else:
-        print(str("\nThe nearest enemy to you takes ")+str(int(rollDice(3,6)))+str(" damage"))
+        print(str("\nThe nearest enemy to ")+str(party[rollParty])+str(" you takes ")+str(int(rollDice(3,6)))+str(" damage"))
 
 #Explosion
 elif wabbajackSelector == 17:
