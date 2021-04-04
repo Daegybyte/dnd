@@ -24,4 +24,16 @@ The script for  Wabbajack Juice can be found at: https://github.com/Daegybyte/dn
  var direction = ["squares north", " squares south", "squares east", "squares west"];
  var squares = ["one", "two", "three", "four", "five"];
 
+ //function to output dice rolls based on xDy format of rolling damage dice x,y
+ //Roll Dice function
+ function rollDice(diceToBeRolled,dX){
+    let diceOutcome = 0;
+    let diceSum = 0;
+    for (let x = 0; x < diceToBeRolled; x++)
+      diceOutcome = 1+ Math.floor((Math.random() * dX+1));
+      diceSum += diceOutcome;
+    return diceSum;
+  }
+
+  rollDice(3,1);
 
