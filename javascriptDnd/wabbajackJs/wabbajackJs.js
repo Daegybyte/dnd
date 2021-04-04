@@ -57,8 +57,8 @@ var rollAfraidOf
 //Wabbajack effects:
 
 //Lightning Bolt
-if (wabbajackSelector = 1){
-    document.getElementById("demo").innerHTML="Hello.";
+if (wabbajackSelector = 1 ){
+    document.getElementById("wabbajackButton").innerHTML="Hello.";
 
 }
 /*
@@ -155,4 +155,4 @@ else if(wabbajackSelector = 19){
 else if(wabbajackSelector = 20){
 
 }
-/*
+*/
