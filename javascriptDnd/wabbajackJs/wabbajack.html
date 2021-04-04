@@ -3,10 +3,27 @@
 <body>
 
 <h2>Wabbajack</h2>
-<p>Click the button to use the Wabbajack. Beware that not all effects are helpful.</p>
+<p>Click the button to use the Wabbajack.</p>
+<p>Beware that not all effects are helpful.</p>
 
-<button type="button" onclick="rollDice(3,1)">Wabbajack</button>
-<button type="button" onclick="rollDice(3,1)">Wabbajack Juice</button>
+<button type="button" onclick="rollDice(1,1)">Wabbajack</button>
+
+<script>
+function rollDice(diceToBeRolled,dX){
+    { document.getElementById("divID").innerHTML = yourOutputVariable; }
+    let diceOutcome = 0;
+    let diceSum = 0;
+    for (let i = 0; i < diceToBeRolled; i++){
+      diceOutcome = Math.floor(Math.random() * dX)+1;
+      diceSum += diceOutcome;
+    }
+    return diceSum;
+  }
+
+  if (wabbajackSelector = 1){
+    document.getElementById("demo").innerHTML="Hello.";
+}
+</script>
 
 </body>
 </html> 

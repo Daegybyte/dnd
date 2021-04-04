@@ -36,10 +36,10 @@ function rollDice(diceToBeRolled,dX){
    return diceSum;
  }
 
-var wabbajackSelector = Math.floor(Math.random() * 20) + 1;
+var wabbajackSelector = Math.floor(Math.random() * 1) + 1;
 var flipCoin = Math.floor(Math.random() * 2);
 
-var rollBallBearings
+var rollBallBearings //spawns 1,2,3,4 thousand ballbearings
 var rollDistanceNear
 
 var rollPolymorph
@@ -54,9 +54,10 @@ var rollAfraidOf
 
 //Lightning Bolt
 if (wabbajackSelector = 1){
+    document.getElementById("demo").innerHTML="Hello.";
 
 }
-
+/*
 //Ice Storm
 else if(wabbajackSelector = 2){
 
@@ -148,5 +149,6 @@ else if(wabbajackSelector = 19){
 
 //Fireball
 else if(wabbajackSelector = 20){
-    
+
 }
+/*
