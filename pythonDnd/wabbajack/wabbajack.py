@@ -36,12 +36,12 @@ flipCoin = int(random.randint(0,1)) #for play set to 0,1
 
 #function to output dice rolls based on xDy format of rolling damage dice x,y
 def rollDice(diceToBeRolled, dX):
-    rollDice = 0
+    sumDice = 0
     for x in range(diceToBeRolled):  
         diceValue = int(random.randint(1,dX))
-        rollDice += diceValue
+        sumDice += diceValue
         x += 1
-    return rollDice
+    return sumDice
 
 rollBallbearings = int(random.randint(1,4)) #spawns 1,2,3,4 thousand ballbearings
 rollDistanceNear = int(random.randint(1,5))
