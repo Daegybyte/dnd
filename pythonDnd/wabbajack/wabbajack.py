@@ -31,7 +31,7 @@ squares = ["one", "two", "three", "four", "five"]
 
 #for testing, set both numbers to the effect number you are testing.
 # For play, set to '1,maxEffectNumber' ......More effects should be added
-wabbajackSelector = int(random.randint(7,7)) 
+wabbajackSelector = int(random.randint(1,20)) 
 flipCoin = int(random.randint(0,1)) #for play set to 0,1
 
 #function to output dice rolls based on xDy format of rolling damage dice x,y
@@ -63,109 +63,109 @@ rollAfraidOf = int(random.randint(0,len(afraidOf)-1))
 
 #lightning bolt
 if wabbajackSelector == 1:
-    print(str("\nA lightning bolt shoots towards the nearest enemy who takes ")+str(rollDice(3,6))+str(" damage"))
+    print(str("\nA lightning bolt shoots towards the nearest enemy who takes ")+str(rollDice(3,6))+str(" damage.\n"))
 
 #Ice storm
 elif wabbajackSelector == 2:
     flipCoin
     if flipCoin == 1:
-        print(str("\n")+str("A ")+str(rollDice(1,5))+str(" square radius ice storm centred on the nearest enemy. All creatures in area take ")+str(rollDice(4,6))+str(" damage.\nThe ground is now difficult terrain."))
+        print(str("\n")+str("A ")+str(rollDice(1,5))+str(" square radius ice storm centred on the nearest enemy. All creatures in area take ")+str(rollDice(4,6))+str(" damage.\nThe ground is now difficult icy terrain.\n"))
     else:
-        print(str("\n")+str("A ")+str(rollDice(1,5))+str(" square radius ice storm centred on the farthest enemy. All creatures in area take ")+str(rollDice(4,6))+str(" damage.\nThe ground is now difficult terrain"))
+        print(str("\n")+str("A ")+str(rollDice(1,5))+str(" square radius ice storm centred on the farthest enemy. All creatures in area take ")+str(rollDice(4,6))+str(" damage.\nThe ground is now difficult icy terrain.\n"))
 
 #Heal
 elif wabbajackSelector == 3:
     if rollDice(1,100) == 100:
-        print(str("\nParty regains full health, plus ")+str(int(rollDice(1,8)))+str(" temporary hit points"))
+        print(str("\nParty regains full health, plus ")+str(int(rollDice(1,8)))+str(" temporary hit points.\n"))
     elif rollDice(1,100) <= 50:
-        print("\nNearest enemy heals 15HP")
+        print("\nNearest enemy heals 15HP.\n")
     else:
-        print(str("\n")+str(str(party[rollParty]))+str(" heals 10HP"))   
+        print(str("\n")+str(str(party[rollParty]))+str(" heals 10HP.\n"))   
 
 #Make it rain
 elif wabbajackSelector == 4:
-    print(str("\n")+str(int(rollDice(1,20)))+str("gp falls from the sky"))
+    print(str("\n")+str(int(rollDice(1,20)))+str("gp fall from the sky.\n"))
 
 #Polymorph
 elif wabbajackSelector == 5:
     if rollDice(1,10) <= 4:
-        print(str("\n")+str(party[rollParty])+str(" has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
+        print(str("\n")+str(party[rollParty])+str(" has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute.\n"))
     elif rollDice(1,10) == 5:
-        print(str("\n")+str("Strongest enemy (determined by DM) has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
+        print(str("\n")+str("Strongest enemy (determined by DM) has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute.\n"))
     else:
-        print(str("\n")+str("Nearest enemy has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute"))
+        print(str("\n")+str("Nearest enemy has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute.\n"))
 
 #Invisibility
 elif wabbajackSelector == 6:
     flipCoin
     if flipCoin == 1:
-        print(str("\n")+str(party[rollParty])+str(" is now invisible for one minute, or until they attack or until they take damage"))
+        print(str("\n")+str(party[rollParty])+str(" is now invisible for one minute, or until they attack or until they take damage.\n"))
     else:
-        print(str("\n")+str("Nearest enemy is now invisble for one minute, or until it attacks or takes damage"))
+        print(str("\n")+str("Nearest enemy is now invisible for one minute, or until it attacks or takes damage.\n"))
 
 #Summon Kobold
 elif wabbajackSelector == 7:
     if rollDice(1,10) == 1:
-        print(str("\n")+str("An enemy kobold appears.!"))
+        print(str("\n")+str("An enemy kobold appears!\n"))
     elif rollDice(1,10) == 2:
-        print(str("\n")+str("A friendly kobold appears and aids you in combat for one day"))
+        print(str("\n")+str("A friendly kobold appears and aids you in combat for one day.\n"))
     else:
-        print(str("\n")+str("A friendly kolbold appears and gives you 10 Silver and a pretty flower"))
+        print(str("\n")+str("A friendly kolbold appears and gives you 10 Silver and a pretty flower.\n"))
 
 #Prone
 elif wabbajackSelector == 8:
-    print(str("\n")+str("All creatures, monsters, etc. are knocked prone"))
+    print(str("\n")+str("All standing creatures, monsters, etc. are knocked prone. All flying creatures are forced to land.\n"))
 
 #Wabbajack Juice 
 elif wabbajackSelector == 9:
-    print(str("\nWabbajack juice appears in ")+str(party[rollParty])+str("'s hand.\nThey can either take one action to put it away\nor consume without using an action.\n\nThe effects of Wabbajack juice can only be revealed after consumption.\nPrevious wabbajack juice disappear from existence if it has not been consumed\nby the time the wabbajack is used again."))
+    print(str("\nWabbajack juice appears in ")+str(party[rollParty])+str("'s hand.\nThey can either take one action to put it away\nor consume without using an action.\n\nThe effects of Wabbajack juice can only be revealed after consumption.\nPrevious wabbajack juice disappear from existence if it has not been consumed\nby the time the wabbajack is used again.\n"))
 
 #Fear
 elif wabbajackSelector == 10:
     if rollDice(1,10)  <= 3:
-        print(str("\n")+str("You are frightened of ")+str(afraidOf[rollAfraidOf])+str(" for one minute"))
+        print(str("\n")+str("You are frightened of ")+str(afraidOf[rollAfraidOf])+str(" for one minute.\n"))
     else:
-        print(str("\n")+str("The nearest enemy to ")+str(party[rollParty])+str(" is now frightened of them for one minute"))
+        print(str("\n")+str("The nearest enemy to ")+str(party[rollParty])+str(" is now frightened of them for one minute.\n"))
 
 #Exhaustion
 elif wabbajackSelector == 11:
-    print(str("\n")+str(party[rollParty])+str(" takes one level of exhaustion"))
+    print(str("\n")+str(party[rollParty])+str(" takes one level of exhaustion.\n"))
 
 #Ballbearings
 elif wabbajackSelector == 12:
     rollBallbearings
     rollSquares
-    print(str("\n")+str(rollBallbearings)+str(" thousand ballbearings appear in ")+str(rollBallbearings)+str(" squares,\n")+str(squares[rollSquares])+str(" ")+str(direction[rollDirection])+str(" of ")+str(person[rollPerson]))
+    print(str("\n")+str(rollBallbearings)+str(" thousand ballbearings appear in ")+str(rollBallbearings)+str(" squares,\n")+str(squares[rollSquares])+str(" ")+str(direction[rollDirection])+str(" of ")+str(person[rollPerson])+str(".\n"))
 
 #Absorb HP
 elif wabbajackSelector == 13:
     if rollDice(1,5) == 1:
-        print(str("\n")+str("You have been sapped of 15hp and it has been given to the nearest enemy"))
+        print(str("\n")+str("You have been sapped of 15hp and it has been given to the nearest enemy.\n"))
     else:
-        print(str("\n")+str("You have absorbed 10hp from the nearest enemy"))
+        print(str("\n")+str("You have absorbed 10hp from the nearest enemy.\n"))
 
 #Buffs
 elif wabbajackSelector == 14:
     rollBuffs
     if rollDice(1,10) <= 3:
-        print(str("\n")+str(person[rollPerson])+str(" has been buffed with ")+str(buffs[rollBuffs])+str(" for one minute"))
+        print(str("\n")+str(person[rollPerson])+str(" has been buffed with ")+str(buffs[rollBuffs])+str(" for one minute.\n"))
     else:
-        print(str("\n")+str("Selsys been buffed with with ")+str(buffs[rollBuffs])+str(" for one minute"))
+        print(str("\n")+str("Selsys been buffed with with ")+str(buffs[rollBuffs])+str(" for one minute.\n"))
 
 #Cheese storm
 elif wabbajackSelector == 15:
     if rollDice(1,100) == 1:
-        print(str("\nBlazing wheels of cheese plummet to the ground at four different points you can see within one mile.\n\nEach creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes ")+str(int(rollDice(40,6)))+str(" damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.\nThe spell damages objects in the area and ignites flammable objects that aren't being worn or carried."))
+        print(str("\nBlazing wheels of cheese plummet to the ground at four different points you can see within one mile.\n\nEach creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes ")+str(int(rollDice(40,6)))+str(" damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.\nThe spell damages objects in the area and ignites flammable objects that aren't being worn or carried.\n"))
     else:
-        print(str("\nCheese rains down from on high pummeling your foes in a ")+str(int(rollDice(2,5)))+str(" square area within 90 feet with ")+str(int(rollDice(3,6)))+str(" damage , or half as much upon a successful save Dex 18"))
+        print(str("\nCheese rains down from on high pummeling your foes in a ")+str(int(rollDice(2,5)))+str(" square area within 90 feet with ")+str(int(rollDice(3,6)))+str(" damage , or half as much upon a successful save Dex 18.\n"))
 
 #Random Damage
 elif wabbajackSelector == 16:
     flipCoin
     if flipCoin == 0:
-        print(str("\n")+str(party[rollParty])+str(" takes ")+str(int(rollDice(2,6)))+str(" damage"))
+        print(str("\n")+str(party[rollParty])+str(" takes ")+str(int(rollDice(2,6)))+str(" damage.\n"))
     else:
-        print(str("\nThe nearest enemy to ")+str(party[rollParty])+str(" you takes ")+str(int(rollDice(3,6)))+str(" damage"))
+        print(str("\nThe nearest enemy to ")+str(party[rollParty])+str(" you takes ")+str(int(rollDice(3,6)))+str(" damage.\n"))
 
 #Explosion
 elif wabbajackSelector == 17:
@@ -173,7 +173,7 @@ elif wabbajackSelector == 17:
     rollDistanceNear
     rollDirection
     rollPerson
-    print(str("\nAn explosion erupts ")+str(rollDistanceNear)+str(" ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares must beat a dexterity saving throw 18 or take ")+str(rollDice(3,8))+str(" damage. Or half as much on successful save."))
+    print(str("\nAn explosion erupts ")+str(rollDistanceNear)+str(" ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares must beat a dexterity saving throw 18 or take ")+str(rollDice(3,8))+str(" damage. Or half as much on successful save.\n"))
 
 #Lucky
 elif wabbajackSelector == 18:
@@ -181,12 +181,12 @@ elif wabbajackSelector == 18:
 
 #spectral shield
 elif wabbajackSelector == 19:
-     print(str("\n")+str("A spectral shield appears near ")+str(party[rollParty])+str(". Their AC is increased by +2\nand they are immune to magic missile for one minute."))
+     print(str("\n")+str("A spectral shield appears near ")+str(party[rollParty])+str(". Their AC is increased by +2\nand they are immune to magic missile for one minute.\n"))
 
 #fireball
 elif wabbajackSelector == 20: 
     flipCoin
     if flipCoin == 0:
-        print(str("\na fireball shoots towards ")+str(party[rollParty])+ str(" who takes ")+str(rollDice(8,6))+str(" damage."))
+        print(str("\na fireball shoots towards ")+str(party[rollParty])+ str(" who takes ")+str(rollDice(8,6))+str(" damage.\n"))
     else:
-        print(str("\nA fireball shoots towards the strongest enemy (determined by DM) who takes ")+str(rollDice(8,6))+str(" damage"))
+        print(str("\nA fireball shoots towards the strongest enemy (determined by DM) who takes ")+str(rollDice(8,6))+str(" damage.\n"))
