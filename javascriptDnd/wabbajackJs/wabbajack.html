@@ -6,24 +6,9 @@
 <p>Click the button to use the Wabbajack.</p>
 <p>Beware that not all effects are helpful.</p>
 
-<button type="button" onclick="rollDice(1,1)">Wabbajack</button>
+<button type="button" onclick="wabbajackSelector()">Wabbajack</button>
 
-<script>
-function rollDice(diceToBeRolled,dX){
-    { document.getElementById("diceSum").innerHTML = yourOutputVariable; }
-    let diceOutcome = 0;
-    let diceSum = 0;
-    for (let i = 0; i < diceToBeRolled; i++){
-      diceOutcome = Math.floor(Math.random() * dX)+1;
-      diceSum += diceOutcome;
-    }
-    return diceSum;
-  }
-
-  if (wabbajackSelector = 1){
-    document.getElementById("demo").innerHTML="Hello.";
-}
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html> 
