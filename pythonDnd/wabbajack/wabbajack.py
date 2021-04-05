@@ -3,8 +3,9 @@
 import random
 import json
 
+
+#How to use:
 """
-How to use:
 * Once per short rest
 
 * The wabbajack ignores all resistances, willingness requirements (polymorph),or saving throws unless otherwise specified.
@@ -15,8 +16,10 @@ The fact that it did not roll polymorph means you have in a sense beaten a DCnum
 The effects are chosen after consumption. But can be a greater restoration potion, but can be aof hill giant strength,
 weakness, or of poison resleeved as Bone Hurting Juice. 
 The script for  Wabbajack Juice can be found at: https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajack/wabbajackJuice.py
+"""
 
-About the Wabbajack:
+#About the Wabbajack:
+"""
 The Wabbajack was forged sometime in the age of demons. However origins of it and its creator have become lost in the mist of time.
 There are mentions here and there of it in obscure books, scrolls, and old stories told in remote corners of the world.
 For the few who have heard of it, most believe it to be a myth.
@@ -29,7 +32,9 @@ The only constant is that sooner or later, like the one ring, it betrayed the on
 party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
 afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
-polymorph = ["chicken", "goat", "swarm of bees!", "a friendly dog", "cat", "cockatrice","gelatinous cube", "rabbit","shadow", "owl", "zombie", "stein of ale","Bruce Willis", "beholder", "dire wolf", "yeti", "raven", "polar bear", "T-Rex"]
+polymorph = ["chicken", "goat", "swarm of bees!", "a friendly dog", "cat","death dog", "cockatrice","gelatinous cube",
+"rabbit","shadow", "owl", "zombie", "stein of ale","Bruce Willis", "beholder",
+"dire wolf", "yeti", "raven", "a bowl of petunias", "polar bear", "a big ol' nasty lizard boi"]
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "bardic inspiration"]
 direction = ["squares north", " squares south", "squares east", "squares west"]
 squares = ["one", "two", "three", "four", "five"]
@@ -118,7 +123,7 @@ elif wabbajackSelector == 7:
     elif rollDice(1,10) == 2:
         print(str("\n")+str("A friendly kobold appears and aids you in combat for one day.\n"))
     else:
-        print(str("\n")+str("A friendly kolbold appears and gives you ")+str(rollDice(3,6))+str(" silver and a pretty flower.\n"))
+        print(str("\n")+str("A friendly kolbold appears and gives ")+str(party[rollParty])+str(" ")+str(rollDice(3,6))+str(" silver and a pretty flower.\n"))
 
 #Prone
 elif wabbajackSelector == 8:
@@ -187,11 +192,11 @@ elif wabbajackSelector == 17:
 elif wabbajackSelector == 18:
     print(str("\n")+str(party[rollParty])+str(" has become lucky for one day!\nThey have 3 luck points. Whenever they make an attack roll, ability check, or saving throw, they may spend 1 luck point to roll an additional d20.\nThey can use this ability after the original roll,\nbut before the outcome is revealed. They choose which of the d20s is used for the attack roll, ability check, or saving throw.\nThey can also spend one luck point when an attack roll is made against them. Roll a d20, and choose whether the attacker's roll uses their d20 roll or the players.\nIf multiple creatures use a luck point on the same roll, they cancel out, resulting in no additional dice.\n"))
 
-#spectral shield
+#Spectral Shield
 elif wabbajackSelector == 19:
      print(str("\n")+str("A spectral shield appears near ")+str(party[rollParty])+str(". Their AC is increased by +2\nand they are immune to magic missile for one minute.\n"))
 
-#fireball
+#Fireball
 elif wabbajackSelector == 20: 
     flipCoin
     if flipCoin == 0:
