@@ -15,13 +15,21 @@ The fact that it did not roll polymorph means you have in a sense beaten a DCnum
 The effects are chosen after consumption. But can be a greater restoration potion, but can be aof hill giant strength,
 weakness, or of poison resleeved as Bone Hurting Juice. 
 The script for  Wabbajack Juice can be found at: https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajack/wabbajackJuice.py
+
+About the Wabbajack:
+The Wabbajack was forged sometime in the age of demons. However origins of it and its creator have become lost in the mist of time.
+There are mentions here and there of it in obscure books, scrolls, and old stories told in remote corners of the world.
+For the few who have heard of it, most believe it to be a myth.
+
+The Wabbajackl has been lost and found countless times through the millenia. Though most who came across it did not know it.
+The only constant is that sooner or later, like the one ring, it betrayed the one who wields it as it waits for its master to return.
 """
 
 #Lists to pull from
 party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
 person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
 afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
-polymorph = ["chicken", "goat", "swarm of bees!", "kobold", "cat", "rabbit", "owl", "stein of ale","Bruce Willis", "dire wolf", "yeti", "raven", "polar bear", "T-Rex"]
+polymorph = ["chicken", "goat", "swarm of bees!", "a friendly dog", "cat", "cockatrice","gelatinous cube", "rabbit","shadow", "owl", "zombie", "stein of ale","Bruce Willis", "beholder", "dire wolf", "yeti", "raven", "polar bear", "T-Rex"]
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "bardic inspiration"]
 direction = ["squares north", " squares south", "squares east", "squares west"]
 squares = ["one", "two", "three", "four", "five"]
@@ -29,10 +37,10 @@ squares = ["one", "two", "three", "four", "five"]
  
 #Dice Rolls
 
+# For play, set to (1,20)
 #for testing, set both numbers to the effect number you are testing.
-# For play, set to '1,maxEffectNumber' ......More effects should be added
 wabbajackSelector = int(random.randint(1,20)) 
-flipCoin = int(random.randint(0,1)) #for play set to 0,1
+flipCoin = int(random.randint(0,1))
 
 #function to output dice rolls based on xDy format of rolling damage dice x,y
 def rollDice(diceToBeRolled, dX):
@@ -110,7 +118,7 @@ elif wabbajackSelector == 7:
     elif rollDice(1,10) == 2:
         print(str("\n")+str("A friendly kobold appears and aids you in combat for one day.\n"))
     else:
-        print(str("\n")+str("A friendly kolbold appears and gives you 10 Silver and a pretty flower.\n"))
+        print(str("\n")+str("A friendly kolbold appears and gives you ")+str(rollDice(3,6))+str(" silver and a pretty flower.\n"))
 
 #Prone
 elif wabbajackSelector == 8:
@@ -157,7 +165,7 @@ elif wabbajackSelector == 15:
     if rollDice(1,100) == 1:
         print(str("\nBlazing wheels of cheese plummet to the ground at four different points you can see within one mile.\n\nEach creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes ")+str(int(rollDice(40,6)))+str(" damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.\nThe spell damages objects in the area and ignites flammable objects that aren't being worn or carried.\n"))
     else:
-        print(str("\nCheese rains down from on high pummeling your foes in a ")+str(int(rollDice(2,5)))+str(" square area within 90 feet with ")+str(int(rollDice(3,6)))+str(" damage , or half as much upon a successful save Dex 18.\n"))
+        print(str("\nCheese rains down from on high pummeling your foes in a ")+str(int(rollDice(2,5)))+str(" square area within 90 feet with ")+str(int(rollDice(3,6)))+str(" damage,\nor half as much upon a successful save Dex 18.\n"))
 
 #Random Damage
 elif wabbajackSelector == 16:
