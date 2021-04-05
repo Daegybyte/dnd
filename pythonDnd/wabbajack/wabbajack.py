@@ -34,9 +34,9 @@ person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest e
 afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
 polymorph = ["chicken", "goat", "swarm of bees!", "a friendly dog", "cat","death dog", "cockatrice","gelatinous cube",
 "rabbit","shadow", "owl", "zombie", "stein of ale","Bruce Willis", "beholder",
-"dire wolf", "yeti", "raven", "a bowl of petunias", "polar bear", "a big ol' nasty lizard boi"]
+"dire wolf", "yeti", "raven", "bowl of petunias", "polar bear", "big ol' nasty lizard boi"]
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "bardic inspiration"]
-direction = ["squares north", " squares south", "squares east", "squares west"]
+direction = ["squares north", "squares south", "squares east", "squares west"]
 squares = ["one", "two", "three", "four", "five"]
 
  
@@ -76,7 +76,7 @@ rollAfraidOf = int(random.randint(0,len(afraidOf)-1))
 
 #lightning bolt
 if wabbajackSelector == 1:
-    print(str("\nA lightning bolt shoots towards the nearest enemy who takes ")+str(rollDice(3,6))+str(" damage.\n"))
+    print(str("\nA lightning bolt shoots towards the nearest enemy who takes ")+str(rollDice(3,6))+str(" damage.\nFlammable objects within 5 feet not being worn or carried burst into flame"))
 
 #Ice storm
 elif wabbajackSelector == 2:
@@ -114,7 +114,7 @@ elif wabbajackSelector == 6:
     if flipCoin == 1:
         print(str("\n")+str(party[rollParty])+str(" is now invisible for one minute, or until they attack or until they take damage.\n"))
     else:
-        print(str("\n")+str("Nearest enemy is now invisible for one minute, or until it attacks or takes damage.\n"))
+        print(str("\n")+str("The nearest enemy to ")+str(party[rollParty])+str(" is now invisible for one minute, or until it attacks or takes damage.\n"))
 
 #Summon Kobold
 elif wabbajackSelector == 7:
@@ -168,9 +168,9 @@ elif wabbajackSelector == 14:
 #Cheese storm
 elif wabbajackSelector == 15:
     if rollDice(1,100) == 1:
-        print(str("\nBlazing wheels of cheese plummet to the ground at four different points you can see within one mile.\n\nEach creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes ")+str(int(rollDice(40,6)))+str(" damage on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.\nThe spell damages objects in the area and ignites flammable objects that aren't being worn or carried.\n"))
+        print(str("\nBlazing wheels of cheese plummet to the ground at four different points you can see within one mile.\n\nEach creature in a 40-foot-radius sphere centered on each point you choose must make a Dexterity saving throw.\nThe sphere spreads around corners.\nA creature takes ")+str(int(rollDice(40,6)))+str(" damage. on a failed save, or half as much damage on a successful one.\nA creature in the area of more than one fiery burst is affected only once.\nThe spell damages objects in the area and ignites flammable objects that aren't being worn or carried.\n"))
     else:
-        print(str("\nCheese rains down from on high pummeling your foes in a ")+str(int(rollDice(2,5)))+str(" square area within 90 feet with ")+str(int(rollDice(3,6)))+str(" damage,\nor half as much upon a successful save Dex 18.\n"))
+        print(str("\nCheese rains down from on high pummeling your foes in a ")+str(int(rollDice(2,5)))+str(" square area within 90 feet with ")+str(int(rollDice(3,6)))+str(" damage.\n"))
 
 #Random Damage
 elif wabbajackSelector == 16:
@@ -186,11 +186,11 @@ elif wabbajackSelector == 17:
     rollDistanceNear
     rollDirection
     rollPerson
-    print(str("\nAn explosion erupts ")+str(rollDistanceNear)+str(" ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares must beat a dexterity saving throw 18 or take ")+str(rollDice(3,8))+str(" damage. Or half as much on successful save.\n"))
+    print(str("\nAn explosion erupts ")+str(rollDistanceNear)+str(" ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares radius must beat a dexterity saving throw 18 or take ")+str(rollDice(3,8))+str(" damage. Or half as much on successful save.\n"))
 
 #Lucky
 elif wabbajackSelector == 18:
-    print(str("\n")+str(party[rollParty])+str(" has become lucky for one day!\nThey have 3 luck points. Whenever they make an attack roll, ability check, or saving throw, they may spend 1 luck point to roll an additional d20.\nThey can use this ability after the original roll,\nbut before the outcome is revealed. They choose which of the d20s is used for the attack roll, ability check, or saving throw.\nThey can also spend one luck point when an attack roll is made against them. Roll a d20, and choose whether the attacker's roll uses their d20 roll or the players.\nIf multiple creatures use a luck point on the same roll, they cancel out, resulting in no additional dice.\n"))
+    print(str("\n")+str(party[rollParty])+str(" has become lucky for one day!\n\nThey have 3 luck points. Whenever they make an attack roll, ability check, or saving throw, they may spend 1 luck point to roll an additional d20.\nThey can use this ability after the original roll,\nbut before the outcome is revealed. They choose which of the d20s is used for the attack roll, ability check, or saving throw.\nThey can also spend one luck point when an attack roll is made against them. Roll a d20, and choose whether the attacker's roll uses their d20 roll or the players.\nIf multiple creatures use a luck point on the same roll, they cancel out, resulting in no additional dice.\n"))
 
 #Spectral Shield
 elif wabbajackSelector == 19:
@@ -200,6 +200,6 @@ elif wabbajackSelector == 19:
 elif wabbajackSelector == 20: 
     flipCoin
     if flipCoin == 0:
-        print(str("\na fireball shoots towards ")+str(party[rollParty])+ str(" who takes ")+str(rollDice(8,6))+str(" damage.\n"))
+        print(str("\nA fireball shoots towards ")+str(party[rollParty])+ str(" who takes ")+str(rollDice(8,6))+str(" damage.\n"))
     else:
         print(str("\nA fireball shoots towards the strongest enemy (determined by DM) who takes ")+str(rollDice(8,6))+str(" damage.\n"))
