@@ -13,7 +13,7 @@ This is because random nature of the Wabbajack essentially functions as the savi
 The fact that it did not roll polymorph means you have in a sense beaten a DCnumberOfWabbajackEffects.
 
 * Wabbajack Juice is a potion that magically appears in the player inventory.
-The effects are chosen after consumption. But can be a greater restoration potion, but can be aof hill giant strength,
+The effects are chosen after consumption. But can be a greater restoration potion, but can be of hill giant strength,
 weakness, or of poison resleeved as Bone Hurting Juice. 
 The script for  Wabbajack Juice can be found at: https://github.com/Daegybyte/dnd/blob/master/pythonDnd/wabbajack/wabbajackJuice.py
 """
