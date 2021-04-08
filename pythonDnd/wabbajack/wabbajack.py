@@ -34,7 +34,7 @@ person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest e
 afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
 polymorph = ["chicken", "goat", "swarm of bees!", "a friendly dog", "cat","death dog", "cockatrice","gelatinous cube",
 "rabbit","shadow", "owl", "zombie", "stein of ale","Bruce Willis", "beholder",
-"dire wolf", "yeti", "raven", "bowl of petunias", "polar bear", "big ol' nasty lizard boi"]
+"dire wolf", "yeti", "raven", "bowl of petunias", "polar bear", "big ol' nasty lizard boi", "Bugs Bunny dressed up like a girl bunny (charisma is set to 25"]
 buffs = ["enlarge", "reduce", "haste", "freedom of movement", "bardic inspiration"]
 direction = ["squares north", "squares south", "squares east", "squares west"]
 squares = ["one", "two", "three", "four", "five"]
@@ -101,12 +101,12 @@ elif wabbajackSelector == 4:
 
 #Polymorph
 elif wabbajackSelector == 5:
-    if rollDice(1,10) <= 4:
+    if rollDice(1,10) <= 3:
         print(str("\n")+str(party[rollParty])+str(" has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute.\n"))
     elif rollDice(1,10) == 5:
         print(str("\n")+str("Strongest enemy (determined by DM) has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute.\n"))
     else:
-        print(str("\n")+str("Nearest enemy has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute.\n"))
+        print(str("\n")+str("Nearest enemy to ")+str(party[rollParty])+str(" has been turned into a ")+str(polymorph[rollPolymorph])+str(" for one minute.\n"))
 
 #Invisibility
 elif wabbajackSelector == 6:
