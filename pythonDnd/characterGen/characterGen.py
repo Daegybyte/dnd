@@ -10,4 +10,4 @@ rollSurname = int(random.randint(0,len(name)-1))
 rollRace = int(random.randint(0,len(race)-1))
 rollClass = int(random.randint(0,len(charClass)-1))
 
-print(str("\na ")+str(race[rollRace])+str(" ")+str(charClass[rollClass])+str(" named ")+str(name[rollName])+str(" ")+str(name[rollSurname])+str(" "))
+print(str("\nA ")+str(race[rollRace])+str(" ")+str(charClass[rollClass])+str(" named ")+str(name[rollName])+str(" ")+str(name[rollSurname])+str(" "))
