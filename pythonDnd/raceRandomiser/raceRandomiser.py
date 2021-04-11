@@ -1,8 +1,5 @@
 import random
 
-rollRace = int(random.randint(0,len(race)-1))
-rollParty = int(random.randint(0,len(party)-1))
-
 party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
 race = [
 "Dragonborn",
@@ -52,4 +49,7 @@ race = [
 "Verdan "
 ]
 
-print(str(party[rollParty])+str(" has been turned into a ")+str(race[rollRace])) 
+rollRace = int(random.randint(0,len(race)-1))
+rollParty = int(random.randint(0,len(party)-1))
+
+print(str("\n")+str(party[rollParty])+str(" has been turned into a ")+str(race[rollRace])) 
