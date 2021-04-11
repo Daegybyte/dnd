@@ -24,14 +24,15 @@ The Wabbajack was forged sometime in the age of demons. However origins of it an
 There are mentions here and there of it in obscure books, scrolls, and old stories told in remote corners of the world.
 For the few who have heard of it, most believe it to be a myth.
 
-The Wabbajackl has been lost and found countless times through the millenia. Though most who came across it did not know it.
+The Wabbajack has been lost and found countless times through the millenia. Though most who came across it did not know it.
 The only constant is that sooner or later, like the one ring, it betrayed the one who wields it as it waits for its master to return.
 """
 
 #Lists to pull from
-party = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever"]
-person = ["Selsys", "Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"]
-afraidOf = ["Nestor", "Rafe", "Friday","Theodor","Sever", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
+party = ["Selsys", "Nestor", "Rafe","Theodor", "Chompsky", "Sever"]
+person = ["Selsys", "Nestor", "Rafe","Theodor","Sever", "Chompsky", "the nearest enemy", "the farthest enemy"]
+afraidOf = ["Nestor", "Rafe","Theodor","Sever", "Chompsky", "the nearest enemy", "the farthest enemy"] #copy of array person but the user/wabbajacker is removed to avoid making them fear themselves
+enemy = ["nearest enemy", "farthest enemy"]
 polymorph = ["chicken", "goat", "swarm of bees!", "a friendly dog", "cat","death dog", "cockatrice","gelatinous cube",
 "rabbit","shadow", "owl", "zombie", "stein of ale","Bruce Willis", "beholder",
 "dire wolf", "yeti", "raven", "bowl of petunias", "polar bear", "big ol' nasty lizard boi", "Bugs Bunny dressed up like a girl bunny (charisma is set to 25"]
@@ -69,7 +70,7 @@ rollSquares = int(random.randint(0,len(squares)-1))
 rollPerson = int(random.randint(0,len(person)-1))
 rollParty = int(random.randint(0,len(party)-1))
 rollAfraidOf = int(random.randint(0,len(afraidOf)-1))
-
+rollEnemy = int(random.randint(0, len(enemy)-1))
 
 
 #Wabbajack effects:
@@ -184,9 +185,9 @@ elif wabbajackSelector == 16:
 elif wabbajackSelector == 17:
     rollExplosionSize = int(random.randint(1,3))
     rollDistanceNear
-    rollDirection
     rollPerson
-    print(str("\nAn explosion erupts ")+str(rollDistanceNear)+str(" ")+str(direction[rollDirection])+str(" ")+str(person[rollPerson])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares radius must beat a dexterity saving throw 18 or take ")+str(rollDice(3,8))+str(" damage. Or half as much on successful save.\n"))
+    rollEnemy
+    print(str("\nAn explosion erupts with a ")+str(rollDistanceNear)+str(" square radius centred on ")+str(" ")+str(enemy[rollEnemy])+str("\nAll creature, monsters, etc. within ")+str(rollExplosionSize)+str(" squares radius must beat a dexterity saving throw 18 or take ")+str(rollDice(3,8))+str(" damage. Or half as much on successful save.\n"))
 
 #Lucky
 elif wabbajackSelector == 18:
