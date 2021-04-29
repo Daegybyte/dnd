@@ -3,7 +3,7 @@ x = float(input("\nx to creature: "))
 y = float(input("y to creature: "))
 spellRange = int(input("spell/attack range: "))
 
-def rangeFinder(x,y,spellRange):
+def rangeFinder(xToTarg,yToTarg,rangeOfAttack):
     hyp = math.sqrt((x**2)+(y**2))
     if (spellRange>hyp):
         return "\ntarget in range"
