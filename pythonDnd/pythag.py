@@ -6,8 +6,8 @@ spellRange = float(input("spell/attack range: "))
 def rangeFinder(xToTarg,yToTarg,rangeOfAttack):
     hyp = math.sqrt((x**2)+(y**2))
     if (spellRange>hyp):
-        return "\ntarget in range"
+        return str(("\nTarget in range\nDistance to target: ")+str(round(hyp,2)))
     else:
-        return "\ntarget out of range"
+        return "\nTarget out of range"
 
 print (rangeFinder(x,y,spellRange))
