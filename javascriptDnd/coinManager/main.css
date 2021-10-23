@@ -1,0 +1,26 @@
+#BannerHeader {
+  color:black;
+  text-align:center;
+}
+
+#BannerHeader h1 {
+  margin:auto;
+  line-height:51px;
+  vertical-align:middle;
+  horiz-align: center;
+}
+
+div.coinConsolidatorClass{
+  width: 90px;
+  height: 20px;
+}
+
+body.coinConsolidatorClass{
+  background: lightblue;
+  color: black;
+}
+
+button.coinConsolidatorClass{
+  width: 75px;
+  height: 40px;
+}

@@ -6,7 +6,7 @@ def rollDice(diceToBeRolled, dX):
         diceValue = int(random.randint(1,dX))
         rollDice += diceValue
         x += 1
-    print (rollDice)
+    # print (rollDice)
     return rollDice
 
 
