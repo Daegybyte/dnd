@@ -30,5 +30,5 @@ class Weird_Dice:
         
 if __name__ == "__main__":
     user_input = input("Enter your dice roll as NumdSides: ")
-    s = Weird_Dice
-    res = s.roll_dice(user_input)
+    Weird_Dice
+    res = Weird_Dice.roll_dice(user_input)
