@@ -1,56 +1,79 @@
 <!doctype html>
 
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <title>Coin Counter</title>
-  <div id="BannerHeader"><h1>Coin Consolidator</h1></div>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Coin Counter</title>
+    <div id="BannerHeader"><h1>Coin Consolidator</h1></div>
 </head>
 
 <body class="coinConsolidatorClass">
+<div class="PurseValuesClass">
 
-<div class="coinConsolidatorClass">
-<table>
-  <tr>
-    <label>Gold:</label>
-    <textarea id="gold" class="coins"></textarea>
-  </tr>
-  <tr>
-    <label>Silver:</label>
-    <textarea id="silver" class="coins"></textarea>
-  </tr>
-  <tr>
-    <label>Copper:</label>
-    <textarea id="copper" class="coins"></textarea>
-  </tr>
-
-  <tr>
-    <button class="coinConsolidatorClass type="button"
-    id="btnCalculate" >btnCalculate</button>
-    <br>
-  </tr>
-
-
-
-
-  <tr>
-    <br>
-    <label>Gold:</label>
-    <textarea id="goldToPlayer"></textarea>
-  </tr>
-  <tr>
-    <label>Silver:</label>
-    <textarea id="silverToPlayer"></textarea>
-  </tr>
-  <tr>
-    <label>Copper:</label>
-    <textarea id="copperToPlayer"></textarea>
-  </tr>
-
-</table>
+    <tr>
+        <div><h3 id="SubHeader">Purse coins</h3></div>
+        <label>Gold:</label>
+        <td><textarea id="goldInPurse"></textarea></td>
+    </tr>
+    <tr>
+        <label>Silver:</label>
+        <td><textarea id="silverInPurse"></textarea></td>
+    </tr>
+    <tr>
+        <label>Copper:</label>
+        <td><textarea id="copperInPurse"></textarea></td>
+    </tr>
+    </table>
 </div>
 
-<script src="./main.js" ></script>
+<div class="coinConsolidatorClass" class="inputValuesClass">
+    <table>
+        <tr>
+            <br>
+            <label>Gold:</label>
+            <textarea id="gold" class="coins"></textarea>
+        </tr>
+        <tr>
+            <label>Silver:</label>
+            <textarea id="silver" class="coins"></textarea>
+        </tr>
+        <tr>
+            <label>Copper:</label>
+            <textarea id="copper" class="coins"></textarea>
+        </tr>
+
+        <tr>
+            <button class="coinConsolidatorClass type="
+                    button id="btnCalculate">Calculate
+            </button>
+            <br>
+        </tr>
+
+        <div class="coinConsolidatorClass" class="outputValuesClass">
+            <tr>
+                <br>
+                <label>Gold:</label>
+                <textarea id="goldToPlayer"></textarea>
+            </tr>
+            <tr>
+                <label>Silver:</label>
+                <textarea id="silverToPlayer"></textarea>
+            </tr>
+            <tr>
+                <label>Copper:</label>
+                <textarea id="copperToPlayer"></textarea>
+            </tr>
+
+    </table>
+</div>
+
+<div class="Notepad" id="notepadDiv">
+    <label>Notes:</label>
+    <textarea id="notepad" rows="30" cols="35" style="font-size: 12pt">
+  </textarea>
+</div>
+
+<script src="./main.js"></script>
 </body>
 
 </html>

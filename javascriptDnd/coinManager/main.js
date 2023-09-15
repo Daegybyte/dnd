@@ -1,15 +1,20 @@
 "use strict";
 
-btnCalculate.addEventListener("click", consolidateCoins);
-function consolidateCoins() {
 
+setZero();
+let btnCalculate = document.getElementById("btnCalculate");
+btnCalculate.addEventListener("click", consolidateCoins);
+
+function consolidateCoins() {
     let gold_ = parseInt(gold.value) * 100;
     let silver_ = parseInt(silver.value) * 10;
     let copper_ = parseInt(copper.value);
+    let purseGold_ = parseInt(goldInPurse.value) * 100;
+    let purseSilver_ = parseInt(silverInPurse.value) * 10;
+    let purseCopper_ = parseInt(copperInPurse.value);
 
-    errorCheckCoin(gold_);
-
-    let coins = parseInt(gold_ + silver_ + copper_);
+    let purseCoins = parseInt(purseGold_ + purseSilver_ + purseCopper_);
+    let coins = parseInt(gold_ + silver_ + copper_ + purseCoins);
 
     gold_ = parseInt(coins / 100);
     let changeFomGold = parseInt(coins % 100);
@@ -24,16 +29,17 @@ function consolidateCoins() {
     document.getElementById("copperToPlayer").value = copper_;
 }
 
-function errorCheckCoin(coin) {
-    let gold = document.getElementById("gold");
-    if(coin.name === gold){
-        console.log("here")
+function setZero(){
+    document.getElementById('gold').value = Number(0);
+    document.getElementById('silver').value = Number(0);
+    document.getElementById('copper').value = Number(0);
 
-        let name = document.getElementById("gold".name)
-        if (isNaN(coin.value)) {
-            console.log("here");
-            alert(name + " cannot be empty!");
-        }
-    }
+    document.getElementById('goldToPlayer').value = Number(0);
+    document.getElementById('silverToPlayer').value = Number(0);
+    document.getElementById('copperToPlayer').value = Number(0);
+
+    document.getElementById('goldInPurse').value = Number(0);
+    document.getElementById('silverInPurse').value = Number(0);
+    document.getElementById('copperInPurse').value = Number(0);
 }
 

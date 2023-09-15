@@ -1,13 +1,15 @@
-#BannerHeader {
-  color:black;
-  text-align:center;
-}
 
 #BannerHeader h1 {
+  text-align:center;
   margin:auto;
-  line-height:51px;
   vertical-align:middle;
-  horiz-align: center;
+  horiz-align: center
+}
+
+.PurseValuesClass {
+  text-align:center;
+  margin:auto;
+  vertical-align:middle;
 }
 
 div.coinConsolidatorClass{
@@ -15,12 +17,36 @@ div.coinConsolidatorClass{
   height: 20px;
 }
 
+div.inputValuesClass{
+  text-align: left;
+
+}
+
+div.outputValuesClass{
+  text-align: center;
+}
+
 body.coinConsolidatorClass{
-  background: lightblue;
-  color: black;
+  background: #066283;
+}
+
+div.Notepad{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  font-size: 25px; /*sets font of "Notes:"*/
+  width: 300px;
+  height: 200px;
 }
 
 button.coinConsolidatorClass{
-  width: 75px;
-  height: 40px;
+  width: auto;
+  height: auto;
+  border-radius: 25px;
+  border: 2px solid #2d88a6;
+  padding: 5px;
 }
+
+
+
+
