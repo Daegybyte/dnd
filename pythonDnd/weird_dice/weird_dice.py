@@ -1,8 +1,8 @@
 
 class Weird_Dice:
     
-    def roll_dice(command: str) -> tuple:
-        dice = Weird_Dice.parse_command(command=command)
+    def roll_dice(input: str) -> tuple:
+        dice = Weird_Dice.parse_command(input=input)
         num, sided = dice[0], dice[1]
         
         import random
@@ -14,23 +14,21 @@ class Weird_Dice:
             total += outcome
             individuals.append(outcome)
         
-        res = f"Total: {total}\n{individuals}\n"
+        res = f"Rolling {num}d{sided}\nTotal: {total}\nRolls: {individuals}\n"
         print(res)
         
-    def parse_command(command: str) -> tuple:
+    def parse_command(input: str) -> tuple:
         import re
         pattern = r'\D'
-        pattern = re.sub(pattern, " ", command)
+        pattern = re.sub(pattern, " ", input)
         pattern = pattern.split(" ")
         numbers = [int(x) for x in pattern if x]
         if len(numbers) > 2:
             print ("Invalid input -- Parsing Error")
             return
-        # print(numbers)
         return numbers
         
-    
 if __name__ == "__main__":
-    s = Weird_Dice
     user_input = input("Enter your dice roll as NumdSides: ")
+    s = Weird_Dice
     res = s.roll_dice(user_input)
