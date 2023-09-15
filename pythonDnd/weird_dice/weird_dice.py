@@ -24,7 +24,7 @@ class Weird_Dice:
         pattern = pattern.split(" ")
         numbers = [int(x) for x in pattern if x]
         if len(numbers) > 2:
-            print ("Invalid input -- Parsing Error")
+            print ("Parsing Error")
             return
         return numbers
         
