@@ -30,4 +30,6 @@ class Weird_Dice:
         
 if __name__ == "__main__":
     user_input = input("enter your roll: ")
+    # import sys
+    # user_input = sys.argv[1]
     res = Weird_Dice.roll_dice(user_input)
