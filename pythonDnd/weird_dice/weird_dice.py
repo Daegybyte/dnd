@@ -29,5 +29,5 @@ class Weird_Dice:
         return numbers
         
 if __name__ == "__main__":
-    user_input = input("Enter your dice roll as NumdSides: ")
+    user_input = input("enter your roll: ")
     res = Weird_Dice.roll_dice(user_input)
