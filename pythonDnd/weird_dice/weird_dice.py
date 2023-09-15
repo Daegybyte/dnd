@@ -1,12 +1,9 @@
 
-class Sandbox:
-    def do_it():
-        raise NotImplementedError("method not implemented")
+class Weird_Dice:
     
     def roll_dice(command: str) -> tuple:
-        dice = Sandbox.parse_command(command=command)
+        dice = Weird_Dice.parse_command(command=command)
         num, sided = dice[0], dice[1]
-        # print(num, sided)
         
         import random
         total = 0
@@ -19,10 +16,6 @@ class Sandbox:
         
         res = f"Total: {total}\n{individuals}\n"
         print(res)
-        # return (total, individuals)
-
-        
-        
         
     def parse_command(command: str) -> tuple:
         import re
@@ -38,6 +31,6 @@ class Sandbox:
         
     
 if __name__ == "__main__":
-    s = Sandbox
-    user_input = input()
+    s = Weird_Dice
+    user_input = input("Enter your dice roll as NumdSides: ")
     res = s.roll_dice(user_input)
