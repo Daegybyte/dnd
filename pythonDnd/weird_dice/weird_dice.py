@@ -6,18 +6,16 @@ class Weird_Dice:
         num, sided = dice[0], dice[1]
         
         import random
-        total = 0
-        individuals = []
+        rolls = []
         for _ in range(num):
             random.seed()
             outcome = random.randint(1, sided)
-            total += outcome
-            individuals.append(outcome)
-        
-        res = f"Rolling {num}d{sided}\nTotal: {total}\nRolls: {individuals}\n"
+            rolls.append(outcome)
+
+        res = f"Rolling {num}d{sided}\nRoll(s): {rolls}\nTotal: {sum(rolls)}\n"
         print(res)
         
-    def parse_command(input: str) -> tuple:
+    def parse_command(input: str = "1d20") -> tuple:
         import re
         pattern = r'\D'
         pattern = re.sub(pattern, " ", input)
@@ -29,7 +27,11 @@ class Weird_Dice:
         return numbers
         
 if __name__ == "__main__":
-    user_input = input("enter your roll: ")
-    # import sys
-    # user_input = sys.argv[1]
-    res = Weird_Dice.roll_dice(user_input)
+    import sys
+    user_input = ""
+    if len(sys.argv) < 2:
+        user_input = "1d20"
+    else:
+        user_input = sys.argv[1]
+
+Weird_Dice.roll_dice(user_input)
