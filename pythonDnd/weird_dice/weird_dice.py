@@ -3,17 +3,22 @@ class Weird_Dice:
     
     def roll_dice(input: str) -> tuple:
         dice = Weird_Dice.parse_command(input=input)
-        num, sided = dice[0], dice[1]
+        num_dice, sides = dice[0], dice[1]
         
         import random
         rolls = []
-        for _ in range(num):
+        for _ in range(num_dice):
             random.seed()
-            outcome = random.randint(1, sided)
+            outcome = random.randint(1, sides)
             rolls.append(outcome)
-
-        res = f"Rolling {num}d{sided}\nRoll(s): {rolls}\nTotal: {sum(rolls)}\n"
-        print(res)
+                
+        max = num_dice * sides
+        min = num_dice
+        d_range = max + min
+        roll_sum = sum(rolls)
+        avg =  d_range // 2
+        out = f"Rolling {num_dice}d{sides}...\nMin:Max: {min}:{max}\nAverage: {avg}\n\nRoll(s): {rolls}\nTotal: {roll_sum}\n"
+        print(out)        
         
     def parse_command(input: str = "1d20") -> tuple:
         import re
